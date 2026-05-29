@@ -1,0 +1,3362 @@
+{
+  "Zabs": {
+    "prefix": "Zabs",
+    "body": [
+      "Zabs{${1:value}}"
+    ],
+    "description": "Returns the absolute value of the given number."
+  },
+  "ZaddButton": {
+    "prefix": "ZaddButton",
+    "body": [
+      "ZaddButton{${1:newRow};${2:customID};${3:label};${4:style};${5:disabled};${6:emoji}}"
+    ],
+    "description": "Adds a button component to the bot's response."
+  },
+  "ZaddCmdReactions": {
+    "prefix": "ZaddCmdReactions",
+    "body": [
+      "ZaddCmdReactions{${1:emoji};${2:}}"
+    ],
+    "description": "Immediately adds one or more emoji reactions to the message that triggered the command."
+  },
+  "ZaddEmoji": {
+    "prefix": "ZaddEmoji",
+    "body": [
+      "ZaddEmoji{${1:name};${2:imageURL};${3:returnEmoji}}"
+    ],
+    "description": "Downloads an image from the given URL and creates a new custom emoji in the current server, optionally returning the usable emoji string."
+  },
+  "ZaddField": {
+    "prefix": "ZaddField",
+    "body": [
+      "ZaddField{${1:name};${2:value};${3:inline};${4:index}}"
+    ],
+    "description": "Adds a named field with a value to the specified embed slot, with an optional inline layout flag."
+  },
+  "ZaddMentionableSelect": {
+    "prefix": "ZaddMentionableSelect",
+    "body": [
+      "ZaddMentionableSelect{${1:menuID};${2:min};${3:max};${4:placeholder}}"
+    ],
+    "description": "Adds a mentionable select menu (users and roles) component to the bot's response."
+  },
+  "ZaddMessageReactions": {
+    "prefix": "ZaddMessageReactions",
+    "body": [
+      "ZaddMessageReactions{${1:channelID};${2:messageID};${3:emoji};${4:}}"
+    ],
+    "description": "Adds one or more emoji reactions to a specific message in the specified channel."
+  },
+  "ZaddReactions": {
+    "prefix": "ZaddReactions",
+    "body": [
+      "ZaddReactions{${1:emoji};${2:}}"
+    ],
+    "description": "Queues one or more emoji reactions to be added to the bot's own response message after it is sent."
+  },
+  "ZaddRoleSelect": {
+    "prefix": "ZaddRoleSelect",
+    "body": [
+      "ZaddRoleSelect{${1:menuID};${2:min};${3:max};${4:placeholder}}"
+    ],
+    "description": "Adds a role select menu component to the bot's response."
+  },
+  "ZaddSelectMenuOption": {
+    "prefix": "ZaddSelectMenuOption",
+    "body": [
+      "ZaddSelectMenuOption{${1:label};${2:value};${3:description};${4:default};${5:emoji}}"
+    ],
+    "description": "Adds an option to the current string select menu."
+  },
+  "ZaddTextInput": {
+    "prefix": "ZaddTextInput",
+    "body": [
+      "ZaddTextInput{${1:fieldID};${2:label};${3:style};${4:minLength};${5:maxLength};${6:required};${7:placeholder}}"
+    ],
+    "description": "Adds a text input field to the current modal."
+  },
+  "ZaddUserSelect": {
+    "prefix": "ZaddUserSelect",
+    "body": [
+      "ZaddUserSelect{${1:menuID};${2:min};${3:max};${4:placeholder}}"
+    ],
+    "description": "Adds a user select menu component to the bot's response."
+  },
+  "ZafkChannelID": {
+    "prefix": "ZafkChannelID",
+    "body": [
+      "ZafkChannelID{}"
+    ],
+    "description": "Returns the ID of the AFK voice channel in the current guild, or an empty string if none is configured."
+  },
+  "ZafkTimeout": {
+    "prefix": "ZafkTimeout",
+    "body": [
+      "ZafkTimeout{${1:guildID}}"
+    ],
+    "description": "Returns the AFK timeout in seconds configured for the guild."
+  },
+  "ZallMembersCount": {
+    "prefix": "ZallMembersCount",
+    "body": [
+      "ZallMembersCount{}"
+    ],
+    "description": "Returns the total combined member count across all guilds the bot is currently in."
+  },
+  "ZallowRoleMentions": {
+    "prefix": "ZallowRoleMentions",
+    "body": [
+      "ZallowRoleMentions{${1:roleID};${2:}}"
+    ],
+    "description": "Restricts role pings in the bot response to only the listed role IDs; if no IDs are given, all role mentions are suppressed."
+  },
+  "ZallowUserMentions": {
+    "prefix": "ZallowUserMentions",
+    "body": [
+      "ZallowUserMentions{${1:userID};${2:}}"
+    ],
+    "description": "Restricts user pings in the bot response to only the listed user IDs; if no IDs are given, all user mentions are suppressed."
+  },
+  "ZappEmojiCreate": {
+    "prefix": "ZappEmojiCreate",
+    "body": [
+      "ZappEmojiCreate{${1:name};${2:imageURL}}"
+    ],
+    "description": "Creates a new application emoji from an image URL. Returns the emoji ID."
+  },
+  "ZappEmojiDelete": {
+    "prefix": "ZappEmojiDelete",
+    "body": [
+      "ZappEmojiDelete{${1:emojiID}}"
+    ],
+    "description": "Deletes an application emoji by ID."
+  },
+  "ZappEmojis": {
+    "prefix": "ZappEmojis",
+    "body": [
+      "ZappEmojis{}"
+    ],
+    "description": "Lists the bot application's emojis as a JSON array."
+  },
+  "ZargCount": {
+    "prefix": "ZargCount",
+    "body": [
+      "ZargCount{${1:text}}"
+    ],
+    "description": "Returns the number of space-separated words in the text."
+  },
+  "ZargsCheck": {
+    "prefix": "ZargsCheck",
+    "body": [
+      "ZargsCheck{${1:min};${2:max};${3:error}}"
+    ],
+    "description": "Halts execution with an error if the number of whitespace-separated arguments in the message is outside the allowed range."
+  },
+  "Zasync": {
+    "prefix": "Zasync",
+    "body": [
+      "Zasync{${1:name};${2:code}}"
+    ],
+    "description": "Spawns a named background task that runs the provided code block concurrently."
+  },
+  "ZauditCount": {
+    "prefix": "ZauditCount",
+    "body": [
+      "ZauditCount{${1:guildID};${2:limit}}"
+    ],
+    "description": "Fetches the guild audit log and returns the number of returned entries."
+  },
+  "ZauditEntries": {
+    "prefix": "ZauditEntries",
+    "body": [
+      "ZauditEntries{${1:guildID};${2:limit}}"
+    ],
+    "description": "Fetches the latest guild audit log entries and returns them as a JSON array."
+  },
+  "ZauditEntryAction": {
+    "prefix": "ZauditEntryAction",
+    "body": [
+      "ZauditEntryAction{${1:guildID};${2:entrySelector}}"
+    ],
+    "description": "Returns the action name for the selected audit log entry."
+  },
+  "ZauditEntryChanges": {
+    "prefix": "ZauditEntryChanges",
+    "body": [
+      "ZauditEntryChanges{${1:guildID};${2:entrySelector}}"
+    ],
+    "description": "Returns the change details for the selected audit log entry as JSON."
+  },
+  "ZauditEntryID": {
+    "prefix": "ZauditEntryID",
+    "body": [
+      "ZauditEntryID{${1:guildID};${2:entrySelector}}"
+    ],
+    "description": "Returns the audit log entry ID for the selected entry."
+  },
+  "ZauditEntryReason": {
+    "prefix": "ZauditEntryReason",
+    "body": [
+      "ZauditEntryReason{${1:guildID};${2:entrySelector}}"
+    ],
+    "description": "Returns the reason attached to the selected audit log entry."
+  },
+  "ZauditEntryTarget": {
+    "prefix": "ZauditEntryTarget",
+    "body": [
+      "ZauditEntryTarget{${1:guildID};${2:entrySelector}}"
+    ],
+    "description": "Returns the target ID for the selected audit log entry."
+  },
+  "ZauditEntryUser": {
+    "prefix": "ZauditEntryUser",
+    "body": [
+      "ZauditEntryUser{${1:guildID};${2:entrySelector}}"
+    ],
+    "description": "Returns the user ID of the actor who created the selected audit log entry."
+  },
+  "ZauditLatest": {
+    "prefix": "ZauditLatest",
+    "body": [
+      "ZauditLatest{${1:guildID}}"
+    ],
+    "description": "Fetches the most recent guild audit log entry and returns it as a JSON object."
+  },
+  "Zauthor": {
+    "prefix": "Zauthor",
+    "body": [
+      "Zauthor{${1:text};${2:index}}"
+    ],
+    "description": "Sets the author name on the specified embed slot."
+  },
+  "ZauthorIcon": {
+    "prefix": "ZauthorIcon",
+    "body": [
+      "ZauthorIcon{${1:url};${2:index}}"
+    ],
+    "description": "Sets the author icon image URL on the specified embed slot, requiring an author to already be set."
+  },
+  "ZauthorURL": {
+    "prefix": "ZauthorURL",
+    "body": [
+      "ZauthorURL{${1:url};${2:index}}"
+    ],
+    "description": "Sets a hyperlink URL on the embed's author name, requiring an author to already be set."
+  },
+  "ZautomodRule": {
+    "prefix": "ZautomodRule",
+    "body": [
+      "ZautomodRule{${1:ruleID}}"
+    ],
+    "description": "Returns information about a specific automod rule in the guild as JSON."
+  },
+  "ZautomodRuleCreate": {
+    "prefix": "ZautomodRuleCreate",
+    "body": [
+      "ZautomodRuleCreate{${1:name};${2:trigger};${3:actions};${4:eventType};${5:enabled};${6:exemptRoles};${7:exemptChannels}}"
+    ],
+    "description": "Creates a new automod rule. trigger and actions are JSON strings."
+  },
+  "ZautomodRuleDelete": {
+    "prefix": "ZautomodRuleDelete",
+    "body": [
+      "ZautomodRuleDelete{${1:ruleID}}"
+    ],
+    "description": "Deletes an automod rule from the guild."
+  },
+  "ZautomodRuleEdit": {
+    "prefix": "ZautomodRuleEdit",
+    "body": [
+      "ZautomodRuleEdit{${1:ruleID};${2:name};${3:trigger};${4:actions};${5:eventType};${6:enabled};${7:exemptRoles};${8:exemptChannels}}"
+    ],
+    "description": "Edits an existing automod rule. Use !unchanged for fields to skip."
+  },
+  "ZautomodRules": {
+    "prefix": "ZautomodRules",
+    "body": [
+      "ZautomodRules{}"
+    ],
+    "description": "Lists all automod rules in the guild as a JSON array."
+  },
+  "ZautomodRuleUpdate": {
+    "prefix": "ZautomodRuleUpdate",
+    "body": [
+      "ZautomodRuleUpdate{${1:ruleID};${2:name};${3:trigger};${4:actions};${5:eventType};${6:enabled};${7:exemptRoles};${8:exemptChannels}}"
+    ],
+    "description": "Edits an existing automod rule. Use !unchanged for fields to skip."
+  },
+  "Zawait": {
+    "prefix": "Zawait",
+    "body": [
+      "Zawait{${1:name}}"
+    ],
+    "description": "Blocks execution until the specified background task completes and returns its output."
+  },
+  "Zban": {
+    "prefix": "Zban",
+    "body": [
+      "Zban{${1:userID};${2:reason};${3:deleteMessageDays}}"
+    ],
+    "description": "Bans a user from the guild with an optional reason and optional number of days of messages to delete."
+  },
+  "Zbase64Decode": {
+    "prefix": "Zbase64Decode",
+    "body": [
+      "Zbase64Decode{${1:data}}"
+    ],
+    "description": "Decodes a base64-encoded string and returns the decoded text."
+  },
+  "Zbase64Encode": {
+    "prefix": "Zbase64Encode",
+    "body": [
+      "Zbase64Encode{${1:text}}"
+    ],
+    "description": "Encodes text to base64."
+  },
+  "ZblackListIDs": {
+    "prefix": "ZblackListIDs",
+    "body": [
+      "ZblackListIDs{${1:userID};${2:};${3:errorMessage}}"
+    ],
+    "description": "Halts command execution if the triggering user's ID matches any of the provided user IDs."
+  },
+  "ZblackListRoles": {
+    "prefix": "ZblackListRoles",
+    "body": [
+      "ZblackListRoles{${1:roleName};${2:};${3:errorMessage}}"
+    ],
+    "description": "Halts command execution if the triggering user holds any role matching the provided role names."
+  },
+  "ZblackListRolesIDs": {
+    "prefix": "ZblackListRolesIDs",
+    "body": [
+      "ZblackListRolesIDs{${1:roleID};${2:};${3:errorMessage}}"
+    ],
+    "description": "Halts command execution if the triggering user holds any role matching the provided role IDs."
+  },
+  "ZblackListServers": {
+    "prefix": "ZblackListServers",
+    "body": [
+      "ZblackListServers{${1:guildID};${2:};${3:errorMessage}}"
+    ],
+    "description": "Halts command execution if the current server's guild ID matches any of the provided guild IDs."
+  },
+  "ZblackListUsers": {
+    "prefix": "ZblackListUsers",
+    "body": [
+      "ZblackListUsers{${1:username};${2:};${3:errorMessage}}"
+    ],
+    "description": "Halts command execution if the triggering user's username matches any of the provided usernames."
+  },
+  "ZboostCount": {
+    "prefix": "ZboostCount",
+    "body": [
+      "ZboostCount{${1:guildID}}"
+    ],
+    "description": "Returns the number of active Nitro boosts the guild has received."
+  },
+  "ZboostLevel": {
+    "prefix": "ZboostLevel",
+    "body": [
+      "ZboostLevel{}"
+    ],
+    "description": "Returns the current Nitro boost tier of the current guild as a number from 0 to 3."
+  },
+  "ZbotCommands": {
+    "prefix": "ZbotCommands",
+    "body": [
+      "ZbotCommands{${1:separator}}"
+    ],
+    "description": "Returns an alphabetically sorted list of all loaded command triggers, joined by the specified separator."
+  },
+  "ZbotID": {
+    "prefix": "ZbotID",
+    "body": [
+      "ZbotID{}"
+    ],
+    "description": "Returns the bot's own user ID."
+  },
+  "ZbotOwnerID": {
+    "prefix": "ZbotOwnerID",
+    "body": [
+      "ZbotOwnerID{}"
+    ],
+    "description": "Returns the user ID of the bot application's owner."
+  },
+  "ZbotTyping": {
+    "prefix": "ZbotTyping",
+    "body": [
+      "ZbotTyping{}"
+    ],
+    "description": "Broadcasts a typing indicator in the current channel."
+  },
+  "ZbyteCount": {
+    "prefix": "ZbyteCount",
+    "body": [
+      "ZbyteCount{${1:text}}"
+    ],
+    "description": "Returns the number of UTF-8 bytes in the text."
+  },
+  "Zcalculate": {
+    "prefix": "Zcalculate",
+    "body": [
+      "Zcalculate{${1:expression}}"
+    ],
+    "description": "Evaluates a mathematical expression supporting +, -, *, /, %, and ** operators with parentheses and correct operator precedence."
+  },
+  "ZcategoryChannels": {
+    "prefix": "ZcategoryChannels",
+    "body": [
+      "ZcategoryChannels{${1:categoryID};${2:separator};${3:returnType}}"
+    ],
+    "description": "Returns the channels inside a category sorted by position, formatted as names, IDs, mentions, or a count, joined by the specified separator."
+  },
+  "ZcategoryCount": {
+    "prefix": "ZcategoryCount",
+    "body": [
+      "ZcategoryCount{${1:guildID}}"
+    ],
+    "description": "Returns the number of category channels in the guild."
+  },
+  "ZcategoryID": {
+    "prefix": "ZcategoryID",
+    "body": [
+      "ZcategoryID{${1:name}}"
+    ],
+    "description": "Returns the snowflake ID of a category channel in the current guild matched by name."
+  },
+  "Zceil": {
+    "prefix": "Zceil",
+    "body": [
+      "Zceil{${1:number}}"
+    ],
+    "description": "Returns the smallest integer greater than or equal to the given number."
+  },
+  "ZchangeCooldownTime": {
+    "prefix": "ZchangeCooldownTime",
+    "body": [
+      "ZchangeCooldownTime{${1:days};${2:hours};${3:minutes};${4:seconds}}"
+    ],
+    "description": "Overrides the label words used when formatting remaining cooldown times."
+  },
+  "ZchangeNickname": {
+    "prefix": "ZchangeNickname",
+    "body": [
+      "ZchangeNickname{${1:nickname};${2:userID}}"
+    ],
+    "description": "Changes the guild nickname of the command author or specified user; supports the %username% placeholder in the nickname string."
+  },
+  "ZchannelCount": {
+    "prefix": "ZchannelCount",
+    "body": [
+      "ZchannelCount{}"
+    ],
+    "description": "Returns the total number of channels in the current guild."
+  },
+  "ZchannelCreated": {
+    "prefix": "ZchannelCreated",
+    "body": [
+      "ZchannelCreated{${1:channelID}}"
+    ],
+    "description": "Returns the Unix timestamp in seconds at which the channel was created, extracted from its snowflake ID."
+  },
+  "ZchannelExists": {
+    "prefix": "ZchannelExists",
+    "body": [
+      "ZchannelExists{${1:channelID}}"
+    ],
+    "description": "Returns true if a channel with the given ID exists, or false otherwise."
+  },
+  "ZchannelID": {
+    "prefix": "ZchannelID",
+    "body": [
+      "ZchannelID{${1:name}}"
+    ],
+    "description": "Returns the current channel's ID, or searches for and returns the ID of a guild channel matching the given name."
+  },
+  "ZchannelInvites": {
+    "prefix": "ZchannelInvites",
+    "body": [
+      "ZchannelInvites{${1:channelID}}"
+    ],
+    "description": "Returns a space-separated list of invite codes for the given channel."
+  },
+  "ZchannelName": {
+    "prefix": "ZchannelName",
+    "body": [
+      "ZchannelName{${1:channelID}}"
+    ],
+    "description": "Returns the name of a Discord channel by its ID, falling back to the current channel if no ID is provided."
+  },
+  "ZchannelNames": {
+    "prefix": "ZchannelNames",
+    "body": [
+      "ZchannelNames{${1:separator};${2:guildID}}"
+    ],
+    "description": "Returns a sorted list of all channel names in the guild joined by the specified separator."
+  },
+  "ZchannelPosition": {
+    "prefix": "ZchannelPosition",
+    "body": [
+      "ZchannelPosition{${1:channelID}}"
+    ],
+    "description": "Returns the position index of a channel within the guild's channel list."
+  },
+  "ZchannelTopic": {
+    "prefix": "ZchannelTopic",
+    "body": [
+      "ZchannelTopic{${1:channelID}}"
+    ],
+    "description": "Returns the topic of a Discord text channel, or an empty string if none is set."
+  },
+  "ZchannelType": {
+    "prefix": "ZchannelType",
+    "body": [
+      "ZchannelType{${1:channelID}}"
+    ],
+    "description": "Returns the type of a channel as a string such as text, voice, category, announcement, stage, forum, thread, or dm."
+  },
+  "ZchannelWebhooks": {
+    "prefix": "ZchannelWebhooks",
+    "body": [
+      "ZchannelWebhooks{${1:channelID}}"
+    ],
+    "description": "Returns a space-separated list of webhook URLs configured for the given channel."
+  },
+  "ZcharCount": {
+    "prefix": "ZcharCount",
+    "body": [
+      "ZcharCount{${1:text}}"
+    ],
+    "description": "Returns the number of Unicode characters in the text."
+  },
+  "ZcheckCondition": {
+    "prefix": "ZcheckCondition",
+    "body": [
+      "ZcheckCondition{${1:condition}}"
+    ],
+    "description": "Evaluates a condition expression and returns true or false."
+  },
+  "ZcheckContains": {
+    "prefix": "ZcheckContains",
+    "body": [
+      "ZcheckContains{${1:text};${2:word};${3:}}"
+    ],
+    "description": "Returns true if the text contains any of the provided words, using a case-insensitive comparison."
+  },
+  "ZcheckUserPerms": {
+    "prefix": "ZcheckUserPerms",
+    "body": [
+      "ZcheckUserPerms{${1:userID};${2:permission};${3:}}"
+    ],
+    "description": "Returns true if the specified user has all of the given guild permissions."
+  },
+  "Zclear": {
+    "prefix": "Zclear",
+    "body": [
+      "Zclear{${1:amount};${2:userID};${3:removePinned}}"
+    ],
+    "description": "Bulk-deletes up to 100 recent messages in the current channel, with an optional user filter and configurable handling of pinned messages."
+  },
+  "ZclearReactions": {
+    "prefix": "ZclearReactions",
+    "body": [
+      "ZclearReactions{${1:channelID};${2:messageID};${3:emoji}}"
+    ],
+    "description": "Removes a specific emoji reaction from a message, or clears all reactions when !all is passed as the emoji."
+  },
+  "Zcolor": {
+    "prefix": "Zcolor",
+    "body": [
+      "Zcolor{${1:hex};${2:index}}"
+    ],
+    "description": "Sets the accent color of the specified embed slot using a hex color code."
+  },
+  "ZcolorRole": {
+    "prefix": "ZcolorRole",
+    "body": [
+      "ZcolorRole{${1:roleID};${2:color}}"
+    ],
+    "description": "Sets the color of an existing role to the specified hex color code."
+  },
+  "ZcommandName": {
+    "prefix": "ZcommandName",
+    "body": [
+      "ZcommandName{}"
+    ],
+    "description": "Returns the name of the currently executing command, falling back to the trigger string if no command name is set."
+  },
+  "ZcommandsCount": {
+    "prefix": "ZcommandsCount",
+    "body": [
+      "ZcommandsCount{}"
+    ],
+    "description": "Returns the total number of commands loaded from the commands directory."
+  },
+  "ZcommandTrigger": {
+    "prefix": "ZcommandTrigger",
+    "body": [
+      "ZcommandTrigger{}"
+    ],
+    "description": "Returns the trigger string of the currently executing command."
+  },
+  "Zcooldown": {
+    "prefix": "Zcooldown",
+    "body": [
+      "Zcooldown{${1:duration};${2:errorMessage}}"
+    ],
+    "description": "Applies a per-user per-server cooldown that blocks re-use of the current command until the duration expires."
+  },
+  "ZcreateChannel": {
+    "prefix": "ZcreateChannel",
+    "body": [
+      "ZcreateChannel{${1:name};${2:type};${3:categoryID}}"
+    ],
+    "description": "Creates a new channel in the current guild with the specified name, type, and optional parent category."
+  },
+  "ZcreateEvent": {
+    "prefix": "ZcreateEvent",
+    "body": [
+      "ZcreateEvent{${1:name};${2:channelID};${3:startTime};${4:description}}"
+    ],
+    "description": "Creates a new scheduled voice event in the server and returns its event ID."
+  },
+  "ZcreateForumTag": {
+    "prefix": "ZcreateForumTag",
+    "body": [
+      "ZcreateForumTag{${1:channelID};${2:name};${3:emoji};${4:moderated}}"
+    ],
+    "description": "Adds a new available tag to a forum channel with an optional emoji and moderation flag."
+  },
+  "ZcreateInvite": {
+    "prefix": "ZcreateInvite",
+    "body": [
+      "ZcreateInvite{${1:channelID};${2:maxUses};${3:maxAge}}"
+    ],
+    "description": "Creates an invite for the specified channel and returns its code."
+  },
+  "ZcreatePost": {
+    "prefix": "ZcreatePost",
+    "body": [
+      "ZcreatePost{${1:channelID};${2:title};${3:content};${4:tagIDs}}"
+    ],
+    "description": "Creates a new forum post in a forum channel and returns its thread ID."
+  },
+  "ZcreateRole": {
+    "prefix": "ZcreateRole",
+    "body": [
+      "ZcreateRole{${1:name};${2:color};${3:hoisted};${4:mentionable}}"
+    ],
+    "description": "Creates a new role in the guild with the specified name and optional color, hoist, and mentionable settings."
+  },
+  "ZcreationDate": {
+    "prefix": "ZcreationDate",
+    "body": [
+      "ZcreationDate{${1:id};${2:format}}"
+    ],
+    "description": "Returns the creation date derived from any Discord snowflake ID, formatted according to the optional format string."
+  },
+  "ZcropText": {
+    "prefix": "ZcropText",
+    "body": [
+      "ZcropText{${1:text};${2:maxChars};${3:ending}}"
+    ],
+    "description": "Crops text to a maximum number of characters and appends an ending string if the text was truncated."
+  },
+  "ZcustomEmoji": {
+    "prefix": "ZcustomEmoji",
+    "body": [
+      "ZcustomEmoji{${1:name}}"
+    ],
+    "description": "Returns the usable Discord emoji string for a server custom emoji looked up by name."
+  },
+  "ZcustomID": {
+    "prefix": "ZcustomID",
+    "body": [
+      "ZcustomID{}"
+    ],
+    "description": "Returns the custom ID of the current interaction."
+  },
+  "Zdate": {
+    "prefix": "Zdate",
+    "body": [
+      "Zdate{}"
+    ],
+    "description": "Returns the current date in YYYY-MM-DD format using the active timezone."
+  },
+  "Zday": {
+    "prefix": "Zday",
+    "body": [
+      "Zday{}"
+    ],
+    "description": "Returns the current day of the month using the active timezone."
+  },
+  "Zdeafen": {
+    "prefix": "Zdeafen",
+    "body": [
+      "Zdeafen{${1:userID}}"
+    ],
+    "description": "Server-deafens the specified user so they cannot hear any audio in voice channels."
+  },
+  "Zdefer": {
+    "prefix": "Zdefer",
+    "body": [
+      "Zdefer{}"
+    ],
+    "description": "Defers the interaction response, showing a thinking indicator and extending the response window to 15 minutes."
+  },
+  "Zdelay": {
+    "prefix": "Zdelay",
+    "body": [
+      "Zdelay{${1:duration};${2:code}}"
+    ],
+    "description": "Executes a block of code after a specified duration (e.g., 10s, 1m)."
+  },
+  "ZdeleteChannels": {
+    "prefix": "ZdeleteChannels",
+    "body": [
+      "ZdeleteChannels{${1:channelID};${2:}}"
+    ],
+    "description": "Deletes one or more channels by their IDs."
+  },
+  "ZdeleteChannelsByName": {
+    "prefix": "ZdeleteChannelsByName",
+    "body": [
+      "ZdeleteChannelsByName{${1:name};${2:}}"
+    ],
+    "description": "Deletes all channels in the current guild whose names match any of the provided names."
+  },
+  "ZdeleteEvent": {
+    "prefix": "ZdeleteEvent",
+    "body": [
+      "ZdeleteEvent{${1:eventID}}"
+    ],
+    "description": "Deletes a scheduled event from the current server by its event ID."
+  },
+  "ZdeleteForumTag": {
+    "prefix": "ZdeleteForumTag",
+    "body": [
+      "ZdeleteForumTag{${1:channelID};${2:tagID}}"
+    ],
+    "description": "Removes an available tag from a forum channel by its tag ID."
+  },
+  "ZdeleteInvite": {
+    "prefix": "ZdeleteInvite",
+    "body": [
+      "ZdeleteInvite{${1:code}}"
+    ],
+    "description": "Deletes a Discord invite by its code."
+  },
+  "ZdeleteMessage": {
+    "prefix": "ZdeleteMessage",
+    "body": [
+      "ZdeleteMessage{${1:channelID};${2:messageID}}"
+    ],
+    "description": "Deletes the specified message from a channel."
+  },
+  "ZdeleteRole": {
+    "prefix": "ZdeleteRole",
+    "body": [
+      "ZdeleteRole{${1:roleID}}"
+    ],
+    "description": "Permanently deletes the specified role from the guild."
+  },
+  "ZdeleteSticker": {
+    "prefix": "ZdeleteSticker",
+    "body": [
+      "ZdeleteSticker{${1:stickerID}}"
+    ],
+    "description": "Deletes a guild sticker from the current server by its sticker ID."
+  },
+  "Zdescription": {
+    "prefix": "Zdescription",
+    "body": [
+      "Zdescription{${1:text};${2:index}}"
+    ],
+    "description": "Sets the description text on the specified embed slot."
+  },
+  "ZdisplayName": {
+    "prefix": "ZdisplayName",
+    "body": [
+      "ZdisplayName{${1:userID};${2:type}}"
+    ],
+    "description": "Returns the display name of the command author or specified user; use server for the guild nickname or global for the Discord global name."
+  },
+  "Zdiv": {
+    "prefix": "Zdiv",
+    "body": [
+      "Zdiv{${1:value};${2:divisor};${3:}}"
+    ],
+    "description": "Divides the first value by each subsequent divisor in sequence and returns the result."
+  },
+  "Zdm": {
+    "prefix": "Zdm",
+    "body": [
+      "Zdm{${1:userID};${2:content}}"
+    ],
+    "description": "Sends a direct message with the specified content to the given user."
+  },
+  "ZdmChannelID": {
+    "prefix": "ZdmChannelID",
+    "body": [
+      "ZdmChannelID{${1:userID}}"
+    ],
+    "description": "Returns the ID of the DM channel between the bot and a user, creating it if it does not yet exist."
+  },
+  "Zduration": {
+    "prefix": "Zduration",
+    "body": [
+      "Zduration{${1:duration}}"
+    ],
+    "description": "Converts a duration string (e.g. 1h, 30m, 5d) into seconds."
+  },
+  "ZeditButton": {
+    "prefix": "ZeditButton",
+    "body": [
+      "ZeditButton{${1:customID};${2:label};${3:style};${4:disabled};${5:emoji};${6:messageID}}"
+    ],
+    "description": "Edits a button on an existing message by its custom ID."
+  },
+  "ZeditChannelPerms": {
+    "prefix": "ZeditChannelPerms",
+    "body": [
+      "ZeditChannelPerms{${1:channelID};${2:userOrRoleID};${3:permission};${4:}}"
+    ],
+    "description": "Edits permission overwrites for a user or role on a channel, using + to allow, - to deny, and / to neutralize each named permission."
+  },
+  "ZeditEvent": {
+    "prefix": "ZeditEvent",
+    "body": [
+      "ZeditEvent{${1:eventID};${2:name};${3:description};${4:startTime}}"
+    ],
+    "description": "Edits one or more fields of an existing scheduled event by its ID."
+  },
+  "ZeditForumTag": {
+    "prefix": "ZeditForumTag",
+    "body": [
+      "ZeditForumTag{${1:channelID};${2:tagID};${3:name};${4:moderated}}"
+    ],
+    "description": "Edits the name or moderation flag of an existing forum tag by its ID."
+  },
+  "ZeditMessage": {
+    "prefix": "ZeditMessage",
+    "body": [
+      "ZeditMessage{${1:channelID};${2:messageID};${3:content}}"
+    ],
+    "description": "Replaces the text content of an existing message in a channel."
+  },
+  "ZeditSelectMenu": {
+    "prefix": "ZeditSelectMenu",
+    "body": [
+      "ZeditSelectMenu{${1:menuID};${2:min};${3:max};${4:placeholder};${5:messageID}}"
+    ],
+    "description": "Edits the properties of a string select menu on an existing message."
+  },
+  "ZeditSelectMenuOption": {
+    "prefix": "ZeditSelectMenuOption",
+    "body": [
+      "ZeditSelectMenuOption{${1:menuID};${2:label};${3:value};${4:description};${5:default};${6:emoji};${7:messageID}}"
+    ],
+    "description": "Replaces the options on an existing select menu with a single updated option."
+  },
+  "ZeditSplitText": {
+    "prefix": "ZeditSplitText",
+    "body": [
+      "ZeditSplitText{${1:index};${2:value}}"
+    ],
+    "description": "Replaces the element at the given 1-based index in the current split text with a new value."
+  },
+  "ZeditThread": {
+    "prefix": "ZeditThread",
+    "body": [
+      "ZeditThread{${1:threadID};${2:name};${3:archived};${4:archiveDuration};${5:locked};${6:slowmode}}"
+    ],
+    "description": "Edits one or more properties of an existing thread such as name, archived state, archive duration, lock status, and slowmode."
+  },
+  "ZeditWelcomeScreen": {
+    "prefix": "ZeditWelcomeScreen",
+    "body": [
+      "ZeditWelcomeScreen{${1:guildID};${2:enabled};${3:description};${4:welcomeChannelsJSON}}"
+    ],
+    "description": "Edits the guild's welcome screen settings."
+  },
+  "ZemojiExists": {
+    "prefix": "ZemojiExists",
+    "body": [
+      "ZemojiExists{${1:id}}"
+    ],
+    "description": "Returns true if a custom emoji with the given ID exists in the current server, or false otherwise."
+  },
+  "ZemojiName": {
+    "prefix": "ZemojiName",
+    "body": [
+      "ZemojiName{${1:id}}"
+    ],
+    "description": "Returns the name of a custom emoji in the current server looked up by its ID."
+  },
+  "ZemoteCount": {
+    "prefix": "ZemoteCount",
+    "body": [
+      "ZemoteCount{}"
+    ],
+    "description": "Returns the total number of custom emojis in the current server."
+  },
+  "Zenabled": {
+    "prefix": "Zenabled",
+    "body": [
+      "Zenabled{${1:condition};${2:errorMessage}}"
+    ],
+    "description": "Halts command execution with an optional error message when the condition is false, or continues silently when it is true."
+  },
+  "ZendsWith": {
+    "prefix": "ZendsWith",
+    "body": [
+      "ZendsWith{${1:text};${2:suffix}}"
+    ],
+    "description": "Returns true if the text ends with the specified suffix."
+  },
+  "Zentitlements": {
+    "prefix": "Zentitlements",
+    "body": [
+      "Zentitlements{}"
+    ],
+    "description": "Returns the bot application's entitlements as a JSON array."
+  },
+  "Zephemeral": {
+    "prefix": "Zephemeral",
+    "body": [
+      "Zephemeral{}"
+    ],
+    "description": "Marks the current slash command response as ephemeral so it is only visible to the invoking user."
+  },
+  "Zerror": {
+    "prefix": "Zerror",
+    "body": [
+      "Zerror{${1:message}}"
+    ],
+    "description": "Halts execution and displays a custom user-facing error message."
+  },
+  "Zeval": {
+    "prefix": "Zeval",
+    "body": [
+      "Zeval{${1:code}}"
+    ],
+    "description": "Parses and executes a ZBR code string at runtime, returning the concatenated text output."
+  },
+  "ZeventChannel": {
+    "prefix": "ZeventChannel",
+    "body": [
+      "ZeventChannel{${1:eventID}}"
+    ],
+    "description": "Returns the channel ID associated with a scheduled event, or an empty string for external events."
+  },
+  "ZeventCount": {
+    "prefix": "ZeventCount",
+    "body": [
+      "ZeventCount{}"
+    ],
+    "description": "Returns the total number of scheduled events in the current server."
+  },
+  "ZeventDescription": {
+    "prefix": "ZeventDescription",
+    "body": [
+      "ZeventDescription{${1:eventID}}"
+    ],
+    "description": "Returns the description of a scheduled event by its event ID, or an empty string if no description is set."
+  },
+  "ZeventEnd": {
+    "prefix": "ZeventEnd",
+    "body": [
+      "ZeventEnd{${1:eventID}}"
+    ],
+    "description": "Returns the end time of a scheduled event as a Unix timestamp string, or an empty string if no end time is set."
+  },
+  "ZeventName": {
+    "prefix": "ZeventName",
+    "body": [
+      "ZeventName{${1:eventID}}"
+    ],
+    "description": "Returns the name of a scheduled event by its event ID."
+  },
+  "ZeventStart": {
+    "prefix": "ZeventStart",
+    "body": [
+      "ZeventStart{${1:eventID}}"
+    ],
+    "description": "Returns the start time of a scheduled event as a Unix timestamp string."
+  },
+  "ZeventStatus": {
+    "prefix": "ZeventStatus",
+    "body": [
+      "ZeventStatus{${1:eventID}}"
+    ],
+    "description": "Returns the current status of a scheduled event as one of: scheduled, active, completed, or cancelled."
+  },
+  "ZeventSubscribers": {
+    "prefix": "ZeventSubscribers",
+    "body": [
+      "ZeventSubscribers{${1:eventID}}"
+    ],
+    "description": "Returns the number of users subscribed to a scheduled event."
+  },
+  "ZexecutionTime": {
+    "prefix": "ZexecutionTime",
+    "body": [
+      "ZexecutionTime{}"
+    ],
+    "description": "Returns the number of milliseconds elapsed since the current command began executing."
+  },
+  "Zfloor": {
+    "prefix": "Zfloor",
+    "body": [
+      "Zfloor{${1:number}}"
+    ],
+    "description": "Returns the largest integer less than or equal to the given number."
+  },
+  "Zfooter": {
+    "prefix": "Zfooter",
+    "body": [
+      "Zfooter{${1:text};${2:index}}"
+    ],
+    "description": "Sets the footer text on the specified embed slot."
+  },
+  "ZfooterIcon": {
+    "prefix": "ZfooterIcon",
+    "body": [
+      "ZfooterIcon{${1:url};${2:index}}"
+    ],
+    "description": "Sets the footer icon image URL on the specified embed slot, requiring a footer to already be set."
+  },
+  "ZforJson": {
+    "prefix": "ZforJson",
+    "body": [
+      "ZforJson{${1:key};${2:};${3:code}}"
+    ],
+    "description": "Iterates over a JSON array at the given key path within the current parsed JSON object, executing the code block for each element."
+  },
+  "ZforSplit": {
+    "prefix": "ZforSplit",
+    "body": [
+      "ZforSplit{${1:code}}"
+    ],
+    "description": "Iterates over the elements produced by a prior ZtextSplit call, executing the code block for each element with ZloopIndex and ZloopValue populated."
+  },
+  "ZforumPostCount": {
+    "prefix": "ZforumPostCount",
+    "body": [
+      "ZforumPostCount{${1:channelID}}"
+    ],
+    "description": "Returns the number of currently active posts in a forum channel."
+  },
+  "ZforumPostLock": {
+    "prefix": "ZforumPostLock",
+    "body": [
+      "ZforumPostLock{${1:postID}}"
+    ],
+    "description": "Locks a forum post, preventing new replies."
+  },
+  "ZforumPostPin": {
+    "prefix": "ZforumPostPin",
+    "body": [
+      "ZforumPostPin{${1:postID}}"
+    ],
+    "description": "Pins a forum post to the top of the forum channel."
+  },
+  "ZforumPosts": {
+    "prefix": "ZforumPosts",
+    "body": [
+      "ZforumPosts{${1:channelID}}"
+    ],
+    "description": "Returns a space-separated list of active post IDs in a forum channel."
+  },
+  "ZforumTagEmoji": {
+    "prefix": "ZforumTagEmoji",
+    "body": [
+      "ZforumTagEmoji{${1:channelID};${2:tagID}}"
+    ],
+    "description": "Returns the emoji associated with a forum tag."
+  },
+  "ZforumTagID": {
+    "prefix": "ZforumTagID",
+    "body": [
+      "ZforumTagID{${1:channelID};${2:tagName}}"
+    ],
+    "description": "Returns the ID of a forum tag matching the given name, or an empty string if not found."
+  },
+  "ZforumTagModerated": {
+    "prefix": "ZforumTagModerated",
+    "body": [
+      "ZforumTagModerated{${1:channelID};${2:tagID}}"
+    ],
+    "description": "Returns true if the specified forum tag is restricted to moderators, or false otherwise."
+  },
+  "ZforumTags": {
+    "prefix": "ZforumTags",
+    "body": [
+      "ZforumTags{${1:channelID}}"
+    ],
+    "description": "Returns a space-separated list of available tag names in a forum channel."
+  },
+  "ZfromTimestamp": {
+    "prefix": "ZfromTimestamp",
+    "body": [
+      "ZfromTimestamp{${1:unix};${2:format}}"
+    ],
+    "description": "Formats a Unix timestamp into a human-readable date/time string using the active timezone and the specified format."
+  },
+  "ZgetAttachments": {
+    "prefix": "ZgetAttachments",
+    "body": [
+      "ZgetAttachments{${1:index}}"
+    ],
+    "description": "Returns attachment URLs from the triggering message joined by newlines, or the single URL at the specified 1-based index."
+  },
+  "ZgetBanReason": {
+    "prefix": "ZgetBanReason",
+    "body": [
+      "ZgetBanReason{${1:userID};${2:guildID}}"
+    ],
+    "description": "Returns the ban reason for the specified user, optionally checked against a different guild."
+  },
+  "ZgetChannelVar": {
+    "prefix": "ZgetChannelVar",
+    "body": [
+      "ZgetChannelVar{${1:name};${2:channelID}}"
+    ],
+    "description": "Returns the value of a channel-scoped variable, defaulting to the current channel if not specified."
+  },
+  "ZgetCooldown": {
+    "prefix": "ZgetCooldown",
+    "body": [
+      "ZgetCooldown{${1:type}}"
+    ],
+    "description": "Returns the remaining cooldown time in seconds for the current user and command."
+  },
+  "ZgetEmbedData": {
+    "prefix": "ZgetEmbedData",
+    "body": [
+      "ZgetEmbedData{${1:channelID};${2:messageID};${3:embedIndex};${4:type}}"
+    ],
+    "description": "Fetches the specified field from an embed on an existing Discord message, where type is one of title, description, footer, color, image, or timestamp."
+  },
+  "ZgetMentionableSelectUserCount": {
+    "prefix": "ZgetMentionableSelectUserCount",
+    "body": [
+      "ZgetMentionableSelectUserCount{}"
+    ],
+    "description": "Returns the number of users and roles selected in a mentionable select menu interaction."
+  },
+  "ZgetMentionableSelectUserID": {
+    "prefix": "ZgetMentionableSelectUserID",
+    "body": [
+      "ZgetMentionableSelectUserID{${1:index}}"
+    ],
+    "description": "Returns the selected user or role ID at the given 1-based index from a mentionable select menu interaction."
+  },
+  "ZgetMentionableSelectUserIDs": {
+    "prefix": "ZgetMentionableSelectUserIDs",
+    "body": [
+      "ZgetMentionableSelectUserIDs{${1:separator};${2:limit}}"
+    ],
+    "description": "Returns all selected user and role IDs from a mentionable select menu interaction joined by the given separator."
+  },
+  "ZgetMessage": {
+    "prefix": "ZgetMessage",
+    "body": [
+      "ZgetMessage{${1:channelID};${2:messageID};${3:type}}"
+    ],
+    "description": "Fetches the specified field from a Discord message, where type is one of content, authorID, username, or avatar."
+  },
+  "ZgetReactions": {
+    "prefix": "ZgetReactions",
+    "body": [
+      "ZgetReactions{${1:channelID};${2:messageID};${3:separator};${4:emoji}}"
+    ],
+    "description": "Returns a separator-joined list of usernames of users who reacted to a specific message with the given emoji."
+  },
+  "ZgetRoleSelectRoleCount": {
+    "prefix": "ZgetRoleSelectRoleCount",
+    "body": [
+      "ZgetRoleSelectRoleCount{}"
+    ],
+    "description": "Returns the number of roles selected in a role select menu interaction."
+  },
+  "ZgetRoleSelectRoleID": {
+    "prefix": "ZgetRoleSelectRoleID",
+    "body": [
+      "ZgetRoleSelectRoleID{${1:index}}"
+    ],
+    "description": "Returns the selected role ID at the given 1-based index from a role select menu interaction."
+  },
+  "ZgetRoleSelectRoleIDs": {
+    "prefix": "ZgetRoleSelectRoleIDs",
+    "body": [
+      "ZgetRoleSelectRoleIDs{${1:separator};${2:limit}}"
+    ],
+    "description": "Returns all selected role IDs from a role select menu interaction joined by the given separator."
+  },
+  "ZgetServerVar": {
+    "prefix": "ZgetServerVar",
+    "body": [
+      "ZgetServerVar{${1:name};${2:guildID}}"
+    ],
+    "description": "Returns the value of a server-scoped variable, defaulting to the current server if not specified."
+  },
+  "ZgetSlowmode": {
+    "prefix": "ZgetSlowmode",
+    "body": [
+      "ZgetSlowmode{${1:channelID}}"
+    ],
+    "description": "Returns the slowmode rate limit in seconds for the given channel, or 0 if no slowmode is set."
+  },
+  "ZgetTextSplitIndex": {
+    "prefix": "ZgetTextSplitIndex",
+    "body": [
+      "ZgetTextSplitIndex{${1:value}}"
+    ],
+    "description": "Returns the 1-based index of the first element in the split that matches the given value, or -1 if not found."
+  },
+  "ZgetTextSplitLength": {
+    "prefix": "ZgetTextSplitLength",
+    "body": [
+      "ZgetTextSplitLength{}"
+    ],
+    "description": "Returns the number of elements in the current split text."
+  },
+  "ZgetTimestamp": {
+    "prefix": "ZgetTimestamp",
+    "body": [
+      "ZgetTimestamp{${1:unit}}"
+    ],
+    "description": "Returns the current Unix timestamp in the specified unit: seconds (s), milliseconds (ms), or nanoseconds (ns)."
+  },
+  "ZgetUserSelectUserCount": {
+    "prefix": "ZgetUserSelectUserCount",
+    "body": [
+      "ZgetUserSelectUserCount{}"
+    ],
+    "description": "Returns the number of users selected in a user select menu interaction."
+  },
+  "ZgetUserSelectUserID": {
+    "prefix": "ZgetUserSelectUserID",
+    "body": [
+      "ZgetUserSelectUserID{${1:index}}"
+    ],
+    "description": "Returns the selected user ID at the given 1-based index from a user select menu interaction."
+  },
+  "ZgetUserSelectUserIDs": {
+    "prefix": "ZgetUserSelectUserIDs",
+    "body": [
+      "ZgetUserSelectUserIDs{${1:separator};${2:limit}}"
+    ],
+    "description": "Returns all selected user IDs from a user select menu interaction joined by the given separator."
+  },
+  "ZgetUserVar": {
+    "prefix": "ZgetUserVar",
+    "body": [
+      "ZgetUserVar{${1:name};${2:userID};${3:guildID}}"
+    ],
+    "description": "Returns the value of a user-scoped variable, defaulting to the current user and server if not specified."
+  },
+  "ZgetVar": {
+    "prefix": "ZgetVar",
+    "body": [
+      "ZgetVar{${1:name}}"
+    ],
+    "description": "Returns the value of a global bot-wide variable by name."
+  },
+  "ZglobalCooldown": {
+    "prefix": "ZglobalCooldown",
+    "body": [
+      "ZglobalCooldown{${1:duration};${2:errorMessage}}"
+    ],
+    "description": "Applies a per-user global cooldown across all servers, preventing the user from running the command until the duration expires."
+  },
+  "ZguildBanner": {
+    "prefix": "ZguildBanner",
+    "body": [
+      "ZguildBanner{${1:guildID}}"
+    ],
+    "description": "Returns the banner URL of the guild, or an empty string if no banner is set."
+  },
+  "ZguildExists": {
+    "prefix": "ZguildExists",
+    "body": [
+      "ZguildExists{${1:guildID}}"
+    ],
+    "description": "Returns true if a guild with the given ID is accessible by the bot, or false otherwise."
+  },
+  "ZguildID": {
+    "prefix": "ZguildID",
+    "body": [
+      "ZguildID{}"
+    ],
+    "description": "Returns the ID of the current guild."
+  },
+  "ZhasRole": {
+    "prefix": "ZhasRole",
+    "body": [
+      "ZhasRole{${1:userID};${2:roleID}}"
+    ],
+    "description": "Returns true if the specified user currently has the given role."
+  },
+  "ZhighestRole": {
+    "prefix": "ZhighestRole",
+    "body": [
+      "ZhighestRole{${1:userID}}"
+    ],
+    "description": "Returns the ID of the highest-position role held by the specified user, defaulting to the author."
+  },
+  "ZhighestRoleWithPerms": {
+    "prefix": "ZhighestRoleWithPerms",
+    "body": [
+      "ZhighestRoleWithPerms{${1:permission};${2:}}"
+    ],
+    "description": "Returns the ID of the highest-position role in the guild that has all of the specified permissions."
+  },
+  "Zhour": {
+    "prefix": "Zhour",
+    "body": [
+      "Zhour{}"
+    ],
+    "description": "Returns the current hour using the active timezone."
+  },
+  "ZhttpAddHeader": {
+    "prefix": "ZhttpAddHeader",
+    "body": [
+      "ZhttpAddHeader{${1:name};${2:value}}"
+    ],
+    "description": "Adds a custom HTTP header by name and value that will be sent with all subsequent HTTP requests in the current execution."
+  },
+  "ZhttpDelete": {
+    "prefix": "ZhttpDelete",
+    "body": [
+      "ZhttpDelete{${1:url};${2:body}}"
+    ],
+    "description": "Sends an HTTP DELETE request to the specified URL with an optional request body and stores the response."
+  },
+  "ZhttpGet": {
+    "prefix": "ZhttpGet",
+    "body": [
+      "ZhttpGet{${1:url}}"
+    ],
+    "description": "Sends an HTTP GET request to the specified URL and stores the response for access via ZhttpStatus and ZhttpResult."
+  },
+  "ZhttpGetHeader": {
+    "prefix": "ZhttpGetHeader",
+    "body": [
+      "ZhttpGetHeader{${1:name}}"
+    ],
+    "description": "Returns the value of a custom HTTP header previously registered via ZhttpAddHeader, or an empty string if it does not exist."
+  },
+  "ZhttpPatch": {
+    "prefix": "ZhttpPatch",
+    "body": [
+      "ZhttpPatch{${1:url};${2:body}}"
+    ],
+    "description": "Sends an HTTP PATCH request to the specified URL with an optional request body and stores the response."
+  },
+  "ZhttpPost": {
+    "prefix": "ZhttpPost",
+    "body": [
+      "ZhttpPost{${1:url};${2:body}}"
+    ],
+    "description": "Sends an HTTP POST request to the specified URL with an optional request body and stores the response."
+  },
+  "ZhttpPut": {
+    "prefix": "ZhttpPut",
+    "body": [
+      "ZhttpPut{${1:url};${2:body}}"
+    ],
+    "description": "Sends an HTTP PUT request to the specified URL with an optional request body and stores the response."
+  },
+  "ZhttpRemoveHeader": {
+    "prefix": "ZhttpRemoveHeader",
+    "body": [
+      "ZhttpRemoveHeader{${1:name}}"
+    ],
+    "description": "Removes a custom HTTP header previously set via ZhttpAddHeader so it is no longer sent with subsequent requests."
+  },
+  "ZhttpResult": {
+    "prefix": "ZhttpResult",
+    "body": [
+      "ZhttpResult{${1:key};${2:}}"
+    ],
+    "description": "Returns the response body of the last HTTP request, optionally navigating into it as a JSON path where each argument is one level deeper."
+  },
+  "ZhttpStatus": {
+    "prefix": "ZhttpStatus",
+    "body": [
+      "ZhttpStatus{}"
+    ],
+    "description": "Returns the HTTP status code of the last HTTP request made in the current execution."
+  },
+  "Zif": {
+    "prefix": "Zif",
+    "body": [
+      "Zif{${1:condition};${2:then};${3:else}}"
+    ],
+    "description": "Evaluates a condition and returns the then-branch value if true, or the optional else-branch value if false."
+  },
+  "ZignoreChannels": {
+    "prefix": "ZignoreChannels",
+    "body": [
+      "ZignoreChannels{${1:channelID};${2:};${3:errorMessage}}"
+    ],
+    "description": "Halts execution if the current channel matches any of the provided channel IDs."
+  },
+  "Zimage": {
+    "prefix": "Zimage",
+    "body": [
+      "Zimage{${1:url};${2:index}}"
+    ],
+    "description": "Sets the large image URL on the specified embed slot."
+  },
+  "ZindexOf": {
+    "prefix": "ZindexOf",
+    "body": [
+      "ZindexOf{${1:text};${2:search}}"
+    ],
+    "description": "Returns the 1-based character position of the first occurrence of a search string in the text, or 0 if not found."
+  },
+  "ZinputValue": {
+    "prefix": "ZinputValue",
+    "body": [
+      "ZinputValue{${1:fieldID}}"
+    ],
+    "description": "Returns the submitted value of a modal text input field by its field ID."
+  },
+  "ZinviteInfo": {
+    "prefix": "ZinviteInfo",
+    "body": [
+      "ZinviteInfo{${1:code};${2:type}}"
+    ],
+    "description": "Returns a specific field of a Discord invite by its code, where type is one of uses, channel, creationDate, inviter, or isTemporary."
+  },
+  "ZisAdmin": {
+    "prefix": "ZisAdmin",
+    "body": [
+      "ZisAdmin{${1:userID}}"
+    ],
+    "description": "Returns true if the command author or specified user has the Administrator permission in the current guild, otherwise false."
+  },
+  "ZisBanned": {
+    "prefix": "ZisBanned",
+    "body": [
+      "ZisBanned{${1:userID};${2:guildID}}"
+    ],
+    "description": "Returns true if the specified user is currently banned from the guild."
+  },
+  "ZisBoolean": {
+    "prefix": "ZisBoolean",
+    "body": [
+      "ZisBoolean{${1:value}}"
+    ],
+    "description": "Returns true if the value is exactly the string true or false, otherwise returns false."
+  },
+  "ZisBooster": {
+    "prefix": "ZisBooster",
+    "body": [
+      "ZisBooster{${1:userID}}"
+    ],
+    "description": "Returns true if the command author or specified user is currently boosting the current guild, otherwise false."
+  },
+  "ZisBot": {
+    "prefix": "ZisBot",
+    "body": [
+      "ZisBot{${1:userID}}"
+    ],
+    "description": "Returns true if the command author or specified user is a bot account, otherwise false."
+  },
+  "ZisEmojiAnimated": {
+    "prefix": "ZisEmojiAnimated",
+    "body": [
+      "ZisEmojiAnimated{${1:id}}"
+    ],
+    "description": "Returns true if the custom emoji with the given ID is animated, or false if it is static."
+  },
+  "ZisHoisted": {
+    "prefix": "ZisHoisted",
+    "body": [
+      "ZisHoisted{${1:roleID}}"
+    ],
+    "description": "Returns true if the given role is displayed separately in the member list, defaulting to the author's top role if no ID is provided."
+  },
+  "ZisInteger": {
+    "prefix": "ZisInteger",
+    "body": [
+      "ZisInteger{${1:value}}"
+    ],
+    "description": "Returns true if the value parses as a whole number with no decimal point, otherwise returns false."
+  },
+  "ZisInVoice": {
+    "prefix": "ZisInVoice",
+    "body": [
+      "ZisInVoice{${1:userID}}"
+    ],
+    "description": "Returns true if the specified user is currently connected to a voice channel, defaulting to the author."
+  },
+  "ZisMentionable": {
+    "prefix": "ZisMentionable",
+    "body": [
+      "ZisMentionable{${1:roleID}}"
+    ],
+    "description": "Returns true if the given role can be mentioned by all users, defaulting to the author's top role if no ID is provided."
+  },
+  "ZisMentioned": {
+    "prefix": "ZisMentioned",
+    "body": [
+      "ZisMentioned{${1:userID}}"
+    ],
+    "description": "Returns true if the specified user is mentioned in the triggering message, defaulting to the command author."
+  },
+  "ZisMessageEdited": {
+    "prefix": "ZisMessageEdited",
+    "body": [
+      "ZisMessageEdited{${1:channelID};${2:messageID};${3:type}}"
+    ],
+    "description": "Returns true or false for whether a message has been edited, or returns its edit timestamp when type is timestamp."
+  },
+  "ZisModerator": {
+    "prefix": "ZisModerator",
+    "body": [
+      "ZisModerator{${1:userID}}"
+    ],
+    "description": "Returns true if the command author or specified user has the Moderate Members permission in the current guild, otherwise false."
+  },
+  "ZisNSFW": {
+    "prefix": "ZisNSFW",
+    "body": [
+      "ZisNSFW{${1:channelID}}"
+    ],
+    "description": "Returns true if the given channel is marked as NSFW, or false otherwise."
+  },
+  "ZisNumber": {
+    "prefix": "ZisNumber",
+    "body": [
+      "ZisNumber{${1:value}}"
+    ],
+    "description": "Returns true if the value parses as any numeric value including decimals, otherwise returns false."
+  },
+  "ZisSlash": {
+    "prefix": "ZisSlash",
+    "body": [
+      "ZisSlash{}"
+    ],
+    "description": "Returns true if the current command was triggered as a slash command, otherwise returns false."
+  },
+  "ZisTimedOut": {
+    "prefix": "ZisTimedOut",
+    "body": [
+      "ZisTimedOut{${1:userID}}"
+    ],
+    "description": "Returns true if the specified user currently has an active communication timeout."
+  },
+  "ZisUserDMEnabled": {
+    "prefix": "ZisUserDMEnabled",
+    "body": [
+      "ZisUserDMEnabled{${1:userID}}"
+    ],
+    "description": "Returns true if a DM channel can be successfully opened with the command author or specified user, otherwise false."
+  },
+  "ZisValidHex": {
+    "prefix": "ZisValidHex",
+    "body": [
+      "ZisValidHex{${1:value}}"
+    ],
+    "description": "Returns true if the value is a valid six-digit hex color code, otherwise returns false."
+  },
+  "ZjoinSplitText": {
+    "prefix": "ZjoinSplitText",
+    "body": [
+      "ZjoinSplitText{${1:separator}}"
+    ],
+    "description": "Joins all elements in the current split text into a single string using the given separator."
+  },
+  "ZjsonArray": {
+    "prefix": "ZjsonArray",
+    "body": [
+      "ZjsonArray{${1:key};${2:}}"
+    ],
+    "description": "Creates an empty JSON array at the specified key path in the working JSON object."
+  },
+  "ZjsonArrayAppend": {
+    "prefix": "ZjsonArrayAppend",
+    "body": [
+      "ZjsonArrayAppend{${1:key};${2:};${3:value}}"
+    ],
+    "description": "Appends a value to the end of the array at the specified key path in the working JSON object."
+  },
+  "ZjsonArrayCount": {
+    "prefix": "ZjsonArrayCount",
+    "body": [
+      "ZjsonArrayCount{${1:key};${2:}}"
+    ],
+    "description": "Returns the number of elements in the array at the specified key path in the working JSON object."
+  },
+  "ZjsonArrayIndex": {
+    "prefix": "ZjsonArrayIndex",
+    "body": [
+      "ZjsonArrayIndex{${1:key};${2:};${3:value}}"
+    ],
+    "description": "Returns the 0-based index of the first occurrence of a value in the array at the specified key path, or -1 if not found."
+  },
+  "ZjsonArrayPop": {
+    "prefix": "ZjsonArrayPop",
+    "body": [
+      "ZjsonArrayPop{${1:key};${2:}}"
+    ],
+    "description": "Removes and returns the last element of the array at the specified key path in the working JSON object."
+  },
+  "ZjsonArrayReverse": {
+    "prefix": "ZjsonArrayReverse",
+    "body": [
+      "ZjsonArrayReverse{${1:key};${2:}}"
+    ],
+    "description": "Reverses the array at the specified key path in the working JSON object in place."
+  },
+  "ZjsonArrayShift": {
+    "prefix": "ZjsonArrayShift",
+    "body": [
+      "ZjsonArrayShift{${1:key};${2:}}"
+    ],
+    "description": "Removes and returns the first element of the array at the specified key path in the working JSON object."
+  },
+  "ZjsonArraySort": {
+    "prefix": "ZjsonArraySort",
+    "body": [
+      "ZjsonArraySort{${1:key};${2:}}"
+    ],
+    "description": "Sorts the array at the specified key path in ascending order, comparing numbers numerically and other values lexicographically."
+  },
+  "ZjsonArrayUnshift": {
+    "prefix": "ZjsonArrayUnshift",
+    "body": [
+      "ZjsonArrayUnshift{${1:key};${2:};${3:value}}"
+    ],
+    "description": "Inserts a value at the beginning of the array at the specified key path in the working JSON object."
+  },
+  "ZjsonClear": {
+    "prefix": "ZjsonClear",
+    "body": [
+      "ZjsonClear{}"
+    ],
+    "description": "Clears the working JSON object, discarding all stored data for the current execution."
+  },
+  "ZjsonExists": {
+    "prefix": "ZjsonExists",
+    "body": [
+      "ZjsonExists{${1:key};${2:}}"
+    ],
+    "description": "Returns true if the specified key path exists in the working JSON object, or false otherwise."
+  },
+  "ZjsonGet": {
+    "prefix": "ZjsonGet",
+    "body": [
+      "ZjsonGet{${1:key};${2:}}"
+    ],
+    "description": "Returns the value at the specified key path in the working JSON object, returning an empty string if the path does not exist."
+  },
+  "ZjsonJoinArray": {
+    "prefix": "ZjsonJoinArray",
+    "body": [
+      "ZjsonJoinArray{${1:key};${2:};${3:separator}}"
+    ],
+    "description": "Joins all elements of the array at the specified key path into a single string using the provided separator."
+  },
+  "ZjsonParse": {
+    "prefix": "ZjsonParse",
+    "body": [
+      "ZjsonParse{${1:jsonString}}"
+    ],
+    "description": "Parses a JSON string and stores it as the working JSON object for the current execution."
+  },
+  "ZjsonPretty": {
+    "prefix": "ZjsonPretty",
+    "body": [
+      "ZjsonPretty{${1:indent}}"
+    ],
+    "description": "Serializes the working JSON object to a pretty-printed JSON string using the specified number of spaces for indentation."
+  },
+  "ZjsonSet": {
+    "prefix": "ZjsonSet",
+    "body": [
+      "ZjsonSet{${1:key};${2:};${3:value}}"
+    ],
+    "description": "Sets a value at the specified key path in the working JSON object, automatically inferring the value type."
+  },
+  "ZjsonStringify": {
+    "prefix": "ZjsonStringify",
+    "body": [
+      "ZjsonStringify{}"
+    ],
+    "description": "Serializes the working JSON object to a compact JSON string."
+  },
+  "ZjsonUnset": {
+    "prefix": "ZjsonUnset",
+    "body": [
+      "ZjsonUnset{${1:key};${2:}}"
+    ],
+    "description": "Removes the key at the specified path from the working JSON object."
+  },
+  "Zkick": {
+    "prefix": "Zkick",
+    "body": [
+      "Zkick{${1:userID};${2:reason}}"
+    ],
+    "description": "Kicks a user from the guild with an optional reason."
+  },
+  "ZlastMessageID": {
+    "prefix": "ZlastMessageID",
+    "body": [
+      "ZlastMessageID{${1:channelID}}"
+    ],
+    "description": "Returns the ID of the last message sent in the given channel, or an empty string if none exists."
+  },
+  "ZlastPinTimestamp": {
+    "prefix": "ZlastPinTimestamp",
+    "body": [
+      "ZlastPinTimestamp{${1:channelID}}"
+    ],
+    "description": "Returns the date of the most recently pinned message in the channel formatted as YYYY-MM-DD, or an empty string if no pins exist."
+  },
+  "ZlinesCount": {
+    "prefix": "ZlinesCount",
+    "body": [
+      "ZlinesCount{${1:text}}"
+    ],
+    "description": "Returns the number of lines in the text, returning zero for an empty string."
+  },
+  "ZlistVar": {
+    "prefix": "ZlistVar",
+    "body": [
+      "ZlistVar{${1:separator}}"
+    ],
+    "description": "Returns all global variable names joined by the given separator."
+  },
+  "ZloopIndex": {
+    "prefix": "ZloopIndex",
+    "body": [
+      "ZloopIndex{}"
+    ],
+    "description": "Returns the current 1-based iteration index of the active loop, or 0 if called outside a loop."
+  },
+  "ZloopValue": {
+    "prefix": "ZloopValue",
+    "body": [
+      "ZloopValue{}"
+    ],
+    "description": "Returns the current element value of the active loop, or an empty string if called outside a loop."
+  },
+  "Zlowercase": {
+    "prefix": "Zlowercase",
+    "body": [
+      "Zlowercase{${1:text}}"
+    ],
+    "description": "Converts all characters in the text to lowercase."
+  },
+  "ZlowestRole": {
+    "prefix": "ZlowestRole",
+    "body": [
+      "ZlowestRole{${1:userID}}"
+    ],
+    "description": "Returns the ID of the lowest-position non-everyone role held by the specified user, defaulting to the author."
+  },
+  "ZlowestRoleWithPerms": {
+    "prefix": "ZlowestRoleWithPerms",
+    "body": [
+      "ZlowestRoleWithPerms{${1:permission};${2:}}"
+    ],
+    "description": "Returns the ID of the lowest-position role in the guild that has all of the specified permissions."
+  },
+  "Zmax": {
+    "prefix": "Zmax",
+    "body": [
+      "Zmax{${1:number};${2:}}"
+    ],
+    "description": "Returns the largest value among all provided numbers."
+  },
+  "Zmd5": {
+    "prefix": "Zmd5",
+    "body": [
+      "Zmd5{${1:text}}"
+    ],
+    "description": "Returns the MD5 hash of the input text in hexadecimal."
+  },
+  "ZmembersCount": {
+    "prefix": "ZmembersCount",
+    "body": [
+      "ZmembersCount{${1:status}}"
+    ],
+    "description": "Returns the total number of members in the guild, or the count filtered by presence status."
+  },
+  "Zmentioned": {
+    "prefix": "Zmentioned",
+    "body": [
+      "Zmentioned{${1:index};${2:fallbackToAuthor}}"
+    ],
+    "description": "Returns the user ID of the Nth mentioned user in the triggering message, optionally falling back to the author ID."
+  },
+  "Zmessage": {
+    "prefix": "Zmessage",
+    "body": [
+      "Zmessage{${1:index}}"
+    ],
+    "description": "Returns the full message content after the command trigger, or the Nth space-separated word when an index is provided."
+  },
+  "ZmessageID": {
+    "prefix": "ZmessageID",
+    "body": [
+      "ZmessageID{}"
+    ],
+    "description": "Returns the ID of the message that triggered the current command execution."
+  },
+  "ZmessageLink": {
+    "prefix": "ZmessageLink",
+    "body": [
+      "ZmessageLink{${1:messageID};${2:channelID}}"
+    ],
+    "description": "Builds and returns a Discord jump URL for the specified message, using the current channel if no channel ID is provided."
+  },
+  "Zmin": {
+    "prefix": "Zmin",
+    "body": [
+      "Zmin{${1:number};${2:}}"
+    ],
+    "description": "Returns the smallest value among all provided numbers."
+  },
+  "Zminute": {
+    "prefix": "Zminute",
+    "body": [
+      "Zminute{}"
+    ],
+    "description": "Returns the current minute using the active timezone."
+  },
+  "ZmodifyChannel": {
+    "prefix": "ZmodifyChannel",
+    "body": [
+      "ZmodifyChannel{${1:channelID};${2:name};${3:topic};${4:nsfw};${5:position};${6:categoryID}}"
+    ],
+    "description": "Modifies one or more properties of an existing channel such as its name, topic, NSFW flag, position, and parent category."
+  },
+  "ZmodifyRole": {
+    "prefix": "ZmodifyRole",
+    "body": [
+      "ZmodifyRole{${1:roleID};${2:name};${3:color};${4:hoisted};${5:mentionable}}"
+    ],
+    "description": "Modifies the name, color, hoist, and mentionable settings of an existing role, leaving any unspecified fields unchanged."
+  },
+  "ZmodifyRolePerms": {
+    "prefix": "ZmodifyRolePerms",
+    "body": [
+      "ZmodifyRolePerms{${1:roleID};${2:operation};${3:}}"
+    ],
+    "description": "Adds or removes permissions from a role using prefixed operations where + grants, - denies, and / resets a permission."
+  },
+  "Zmodulo": {
+    "prefix": "Zmodulo",
+    "body": [
+      "Zmodulo{${1:dividend};${2:divisor}}"
+    ],
+    "description": "Returns the remainder of dividing the dividend by the divisor."
+  },
+  "Zmonth": {
+    "prefix": "Zmonth",
+    "body": [
+      "Zmonth{}"
+    ],
+    "description": "Returns the current month number using the active timezone."
+  },
+  "Zmulti": {
+    "prefix": "Zmulti",
+    "body": [
+      "Zmulti{${1:number};${2:}}"
+    ],
+    "description": "Returns the product of all provided numbers."
+  },
+  "Zmute": {
+    "prefix": "Zmute",
+    "body": [
+      "Zmute{${1:userID}}"
+    ],
+    "description": "Server-mutes the specified user in all voice channels."
+  },
+  "ZnewModal": {
+    "prefix": "ZnewModal",
+    "body": [
+      "ZnewModal{${1:modalID};${2:title}}"
+    ],
+    "description": "Creates a modal dialog to collect text input from the user."
+  },
+  "ZnewSelectMenu": {
+    "prefix": "ZnewSelectMenu",
+    "body": [
+      "ZnewSelectMenu{${1:menuID};${2:min};${3:max};${4:placeholder}}"
+    ],
+    "description": "Creates a string select menu on the bot's response."
+  },
+  "Znot": {
+    "prefix": "Znot",
+    "body": [
+      "Znot{${1:value}}"
+    ],
+    "description": "Inverts a boolean value, returning false for true or 1, and true for anything else."
+  },
+  "ZnumberSeparator": {
+    "prefix": "ZnumberSeparator",
+    "body": [
+      "ZnumberSeparator{${1:number};${2:separator}}"
+    ],
+    "description": "Formats a number string by inserting thousands separators, defaulting to a comma."
+  },
+  "ZonlyAdmin": {
+    "prefix": "ZonlyAdmin",
+    "body": [
+      "ZonlyAdmin{${1:errorMessage}}"
+    ],
+    "description": "Halts execution unless the author has the Administrator permission in the guild."
+  },
+  "ZonlyBotChannelPerms": {
+    "prefix": "ZonlyBotChannelPerms",
+    "body": [
+      "ZonlyBotChannelPerms{${1:channelID};${2:permission};${3:};${4:errorMessage}}"
+    ],
+    "description": "Halts execution unless the bot has all of the specified permissions in the given channel."
+  },
+  "ZonlyBotPerms": {
+    "prefix": "ZonlyBotPerms",
+    "body": [
+      "ZonlyBotPerms{${1:permission};${2:};${3:errorMessage}}"
+    ],
+    "description": "Halts execution unless the bot has all of the specified guild permissions."
+  },
+  "ZonlyForCategories": {
+    "prefix": "ZonlyForCategories",
+    "body": [
+      "ZonlyForCategories{${1:categoryID};${2:};${3:errorMessage}}"
+    ],
+    "description": "Halts execution unless the current channel belongs to one of the specified category IDs."
+  },
+  "ZonlyForChannels": {
+    "prefix": "ZonlyForChannels",
+    "body": [
+      "ZonlyForChannels{${1:channelID};${2:};${3:errorMessage}}"
+    ],
+    "description": "Halts execution unless the current channel matches one of the specified channel IDs."
+  },
+  "ZonlyForIDs": {
+    "prefix": "ZonlyForIDs",
+    "body": [
+      "ZonlyForIDs{${1:userID};${2:};${3:errorMessage}}"
+    ],
+    "description": "Halts execution unless the author's user ID matches one of the specified IDs."
+  },
+  "ZonlyForRoleIDs": {
+    "prefix": "ZonlyForRoleIDs",
+    "body": [
+      "ZonlyForRoleIDs{${1:roleID};${2:};${3:errorMessage}}"
+    ],
+    "description": "Halts execution unless the author has at least one of the specified role IDs."
+  },
+  "ZonlyForRoles": {
+    "prefix": "ZonlyForRoles",
+    "body": [
+      "ZonlyForRoles{${1:roleName};${2:};${3:errorMessage}}"
+    ],
+    "description": "Halts execution unless the author has at least one of the specified roles matched by name."
+  },
+  "ZonlyForServers": {
+    "prefix": "ZonlyForServers",
+    "body": [
+      "ZonlyForServers{${1:guildID};${2:};${3:errorMessage}}"
+    ],
+    "description": "Halts execution unless the current guild ID matches one of the specified server IDs."
+  },
+  "ZonlyForUsers": {
+    "prefix": "ZonlyForUsers",
+    "body": [
+      "ZonlyForUsers{${1:username};${2:};${3:errorMessage}}"
+    ],
+    "description": "Halts execution unless the author's username matches one of the specified usernames."
+  },
+  "ZonlyIf": {
+    "prefix": "ZonlyIf",
+    "body": [
+      "ZonlyIf{${1:condition};${2:error}}"
+    ],
+    "description": "Halts execution with a custom error message if the given condition evaluates to false."
+  },
+  "ZonlyIfMessageContains": {
+    "prefix": "ZonlyIfMessageContains",
+    "body": [
+      "ZonlyIfMessageContains{${1:message};${2:word};${3:};${4:errorMessage}}"
+    ],
+    "description": "Halts execution with an error message unless the provided message text contains all of the specified words."
+  },
+  "ZonlyNSFW": {
+    "prefix": "ZonlyNSFW",
+    "body": [
+      "ZonlyNSFW{${1:errorMessage}}"
+    ],
+    "description": "Halts execution unless the current channel is marked as NSFW."
+  },
+  "ZonlyPerms": {
+    "prefix": "ZonlyPerms",
+    "body": [
+      "ZonlyPerms{${1:permission};${2:};${3:errorMessage}}"
+    ],
+    "description": "Halts execution unless the author has all of the specified guild permissions."
+  },
+  "Zoption": {
+    "prefix": "Zoption",
+    "body": [
+      "Zoption{${1:key}}"
+    ],
+    "description": "Returns the value of a named slash command option by its key."
+  },
+  "ZpadLeft": {
+    "prefix": "ZpadLeft",
+    "body": [
+      "ZpadLeft{${1:text};${2:width};${3:char}}"
+    ],
+    "description": "Pads the text on the left with a repeated character until it reaches the specified width, defaulting to a space."
+  },
+  "ZpadRight": {
+    "prefix": "ZpadRight",
+    "body": [
+      "ZpadRight{${1:text};${2:width};${3:char}}"
+    ],
+    "description": "Pads the text on the right with a repeated character until it reaches the specified width, defaulting to a space."
+  },
+  "ZparentID": {
+    "prefix": "ZparentID",
+    "body": [
+      "ZparentID{${1:channelID}}"
+    ],
+    "description": "Returns the ID of the parent category of the given channel, or an empty string if the channel has no parent."
+  },
+  "Zping": {
+    "prefix": "Zping",
+    "body": [
+      "Zping{}"
+    ],
+    "description": "Returns the bot's gateway latency in milliseconds."
+  },
+  "ZpinList": {
+    "prefix": "ZpinList",
+    "body": [
+      "ZpinList{${1:channelID}}"
+    ],
+    "description": "Returns a space-separated list of pinned message IDs in a channel."
+  },
+  "ZpinMessage": {
+    "prefix": "ZpinMessage",
+    "body": [
+      "ZpinMessage{${1:channelID};${2:messageID}}"
+    ],
+    "description": "Pins the specified message in a channel, defaulting to the current channel if no channel ID is provided."
+  },
+  "ZpollAddAnswer": {
+    "prefix": "ZpollAddAnswer",
+    "body": [
+      "ZpollAddAnswer{${1:text};${2:emoji}}"
+    ],
+    "description": "Adds an answer option to the poll being created."
+  },
+  "ZpollAllowMultiselect": {
+    "prefix": "ZpollAllowMultiselect",
+    "body": [
+      "ZpollAllowMultiselect{${1:true/false}}"
+    ],
+    "description": "Allows voting for multiple answers in the poll being created."
+  },
+  "ZpollAnswerVoters": {
+    "prefix": "ZpollAnswerVoters",
+    "body": [
+      "ZpollAnswerVoters{${1:messageID};${2:answerID};${3:channelID}}"
+    ],
+    "description": "Returns a list of users who voted for a specific poll answer."
+  },
+  "ZpollAnswerVotes": {
+    "prefix": "ZpollAnswerVotes",
+    "body": [
+      "ZpollAnswerVotes{${1:messageID};${2:answerID};${3:channelID}}"
+    ],
+    "description": "Returns the vote count for a specific poll answer."
+  },
+  "ZpollCreate": {
+    "prefix": "ZpollCreate",
+    "body": [
+      "ZpollCreate{${1:question};${2:duration}}"
+    ],
+    "description": "Starts creating a poll with the given question and duration in hours."
+  },
+  "ZpollEnd": {
+    "prefix": "ZpollEnd",
+    "body": [
+      "ZpollEnd{${1:messageID};${2:channelID}}"
+    ],
+    "description": "Ends a poll early by message ID."
+  },
+  "ZpollGet": {
+    "prefix": "ZpollGet",
+    "body": [
+      "ZpollGet{${1:messageID};${2:channelID}}"
+    ],
+    "description": "Gets poll details and current results for a message."
+  },
+  "ZpollSend": {
+    "prefix": "ZpollSend",
+    "body": [
+      "ZpollSend{${1:channelID};${2:returnID}}"
+    ],
+    "description": "Sends the configured poll to the specified channel."
+  },
+  "ZpostTags": {
+    "prefix": "ZpostTags",
+    "body": [
+      "ZpostTags{${1:threadID}}"
+    ],
+    "description": "Returns a space-separated list of tag IDs currently applied to a forum post thread."
+  },
+  "Zpow": {
+    "prefix": "Zpow",
+    "body": [
+      "Zpow{${1:base};${2:exponent}}"
+    ],
+    "description": "Returns the base raised to the power of the exponent."
+  },
+  "ZpublishMessage": {
+    "prefix": "ZpublishMessage",
+    "body": [
+      "ZpublishMessage{${1:channelID};${2:messageID}}"
+    ],
+    "description": "Crossposts a message from an announcement channel to all subscribed channels."
+  },
+  "Zrandom": {
+    "prefix": "Zrandom",
+    "body": [
+      "Zrandom{${1:min};${2:max}}"
+    ],
+    "description": "Returns a random integer between min and max (inclusive)."
+  },
+  "ZrandomCategoryID": {
+    "prefix": "ZrandomCategoryID",
+    "body": [
+      "ZrandomCategoryID{}"
+    ],
+    "description": "Returns the ID of a randomly selected category channel in the current server."
+  },
+  "ZrandomChannelID": {
+    "prefix": "ZrandomChannelID",
+    "body": [
+      "ZrandomChannelID{}"
+    ],
+    "description": "Returns the ID of a randomly selected text channel in the current server."
+  },
+  "ZrandomGuildID": {
+    "prefix": "ZrandomGuildID",
+    "body": [
+      "ZrandomGuildID{}"
+    ],
+    "description": "Returns the ID of a randomly selected guild that the bot is a member of."
+  },
+  "ZrandomMention": {
+    "prefix": "ZrandomMention",
+    "body": [
+      "ZrandomMention{}"
+    ],
+    "description": "Returns a formatted mention string for a randomly selected member in the current server."
+  },
+  "ZrandomRoleID": {
+    "prefix": "ZrandomRoleID",
+    "body": [
+      "ZrandomRoleID{}"
+    ],
+    "description": "Returns the ID of a randomly selected role in the current server."
+  },
+  "ZrandomString": {
+    "prefix": "ZrandomString",
+    "body": [
+      "ZrandomString{${1:length}}"
+    ],
+    "description": "Returns a random alphanumeric string of the specified length."
+  },
+  "ZrandomText": {
+    "prefix": "ZrandomText",
+    "body": [
+      "ZrandomText{${1:text};${2:}}"
+    ],
+    "description": "Returns one of the provided text values chosen at random."
+  },
+  "ZrandomUser": {
+    "prefix": "ZrandomUser",
+    "body": [
+      "ZrandomUser{}"
+    ],
+    "description": "Returns the display name of a randomly selected member in the current server."
+  },
+  "ZrandomUserID": {
+    "prefix": "ZrandomUserID",
+    "body": [
+      "ZrandomUserID{}"
+    ],
+    "description": "Returns the user ID of a randomly selected member in the current server."
+  },
+  "ZregexMatch": {
+    "prefix": "ZregexMatch",
+    "body": [
+      "ZregexMatch{${1:text};${2:pattern}}"
+    ],
+    "description": "Returns true if the text matches the given regular expression pattern."
+  },
+  "ZregexReplace": {
+    "prefix": "ZregexReplace",
+    "body": [
+      "ZregexReplace{${1:text};${2:pattern};${3:replacement}}"
+    ],
+    "description": "Replaces all substrings in the text that match the regular expression pattern with the specified replacement."
+  },
+  "ZremoveAllComponents": {
+    "prefix": "ZremoveAllComponents",
+    "body": [
+      "ZremoveAllComponents{${1:messageID}}"
+    ],
+    "description": "Removes all components from a message, defaulting to the triggering message."
+  },
+  "ZremoveButtons": {
+    "prefix": "ZremoveButtons",
+    "body": [
+      "ZremoveButtons{${1:messageID}}"
+    ],
+    "description": "Removes all buttons from a message by clearing all its components, defaulting to the triggering message."
+  },
+  "ZremoveComponent": {
+    "prefix": "ZremoveComponent",
+    "body": [
+      "ZremoveComponent{${1:customID};${2:messageID}}"
+    ],
+    "description": "Removes a specific component by its custom ID from a message, defaulting to the triggering message."
+  },
+  "ZremoveEmoji": {
+    "prefix": "ZremoveEmoji",
+    "body": [
+      "ZremoveEmoji{${1:id}}"
+    ],
+    "description": "Deletes a custom emoji from the current server by its ID."
+  },
+  "ZremoveLinks": {
+    "prefix": "ZremoveLinks",
+    "body": [
+      "ZremoveLinks{${1:text}}"
+    ],
+    "description": "Removes all whitespace-delimited tokens beginning with http:// or https:// from the text."
+  },
+  "ZremoveSplitTextElement": {
+    "prefix": "ZremoveSplitTextElement",
+    "body": [
+      "ZremoveSplitTextElement{${1:index}}"
+    ],
+    "description": "Removes the element at the given 1-based index from the current split text."
+  },
+  "Zrepeat": {
+    "prefix": "Zrepeat",
+    "body": [
+      "Zrepeat{${1:N};${2:code}}"
+    ],
+    "description": "Executes the given code block N times and returns each non-empty output joined by newlines."
+  },
+  "ZreplaceText": {
+    "prefix": "ZreplaceText",
+    "body": [
+      "ZreplaceText{${1:text};${2:sample};${3:new};${4:amount}}"
+    ],
+    "description": "Replaces occurrences of a sample substring in text with a new string, with an optional limit on the number of replacements."
+  },
+  "ZrepliedMessageID": {
+    "prefix": "ZrepliedMessageID",
+    "body": [
+      "ZrepliedMessageID{${1:channelID};${2:messageID}}"
+    ],
+    "description": "Returns the ID of the message that the specified or triggering message is replying to."
+  },
+  "Zreply": {
+    "prefix": "Zreply",
+    "body": [
+      "Zreply{}"
+    ],
+    "description": "Signals that the bot's response should be sent as a reply to the triggering message."
+  },
+  "ZreplyIn": {
+    "prefix": "ZreplyIn",
+    "body": [
+      "ZreplyIn{${1:duration};${2:content}}"
+    ],
+    "description": "Schedules a reply to the triggering message after the specified duration has elapsed."
+  },
+  "ZresetChannelVar": {
+    "prefix": "ZresetChannelVar",
+    "body": [
+      "ZresetChannelVar{${1:name}}"
+    ],
+    "description": "Deletes the given channel variable across every channel."
+  },
+  "ZresetServerVar": {
+    "prefix": "ZresetServerVar",
+    "body": [
+      "ZresetServerVar{${1:name}}"
+    ],
+    "description": "Deletes the given server variable across every server."
+  },
+  "ZresetUserVar": {
+    "prefix": "ZresetUserVar",
+    "body": [
+      "ZresetUserVar{${1:name}}"
+    ],
+    "description": "Deletes the given user variable for every user in the current server."
+  },
+  "ZroleColor": {
+    "prefix": "ZroleColor",
+    "body": [
+      "ZroleColor{${1:roleID}}"
+    ],
+    "description": "Returns the hex color code of a role, defaulting to the author's top role if no ID is provided."
+  },
+  "ZroleCount": {
+    "prefix": "ZroleCount",
+    "body": [
+      "ZroleCount{}"
+    ],
+    "description": "Returns the total number of roles in the current guild."
+  },
+  "ZroleExists": {
+    "prefix": "ZroleExists",
+    "body": [
+      "ZroleExists{${1:roleID}}"
+    ],
+    "description": "Returns true if the given role ID exists in the guild, defaulting to the author's top role if no ID is provided."
+  },
+  "ZroleGrant": {
+    "prefix": "ZroleGrant",
+    "body": [
+      "ZroleGrant{${1:userID};${2:operation};${3:}}"
+    ],
+    "description": "Grants or removes one or more roles from a user using prefixed operations where + adds and - removes a role."
+  },
+  "ZroleID": {
+    "prefix": "ZroleID",
+    "body": [
+      "ZroleID{${1:name}}"
+    ],
+    "description": "Returns the command author's top role ID, or searches for and returns the ID of a guild role matching the given name."
+  },
+  "ZroleMemberCount": {
+    "prefix": "ZroleMemberCount",
+    "body": [
+      "ZroleMemberCount{${1:roleID}}"
+    ],
+    "description": "Returns the number of members who have the given role, defaulting to the author's highest role."
+  },
+  "ZroleMembers": {
+    "prefix": "ZroleMembers",
+    "body": [
+      "ZroleMembers{${1:roleID}}"
+    ],
+    "description": "Returns a space-separated list of user IDs for all members who have the given role, defaulting to the author's highest role."
+  },
+  "ZroleName": {
+    "prefix": "ZroleName",
+    "body": [
+      "ZroleName{${1:roleID}}"
+    ],
+    "description": "Returns the name of a role by its ID, defaulting to the author's top role if no ID is provided."
+  },
+  "ZroleNames": {
+    "prefix": "ZroleNames",
+    "body": [
+      "ZroleNames{${1:separator}}"
+    ],
+    "description": "Returns all role names in the guild sorted by position from highest to lowest, joined by the given separator."
+  },
+  "ZrolePerms": {
+    "prefix": "ZrolePerms",
+    "body": [
+      "ZrolePerms{${1:roleID};${2:separator}}"
+    ],
+    "description": "Returns the permission names granted to a role joined by the given separator, defaulting to the author's top role if no ID is provided."
+  },
+  "ZrolePosition": {
+    "prefix": "ZrolePosition",
+    "body": [
+      "ZrolePosition{${1:roleID}}"
+    ],
+    "description": "Returns the hierarchy position of a role, defaulting to the author's top role if no ID is provided."
+  },
+  "Zround": {
+    "prefix": "Zround",
+    "body": [
+      "Zround{${1:value};${2:decimals}}"
+    ],
+    "description": "Rounds a number to the specified number of decimal places, defaulting to zero decimal places."
+  },
+  "ZrulesChannelID": {
+    "prefix": "ZrulesChannelID",
+    "body": [
+      "ZrulesChannelID{${1:guildID}}"
+    ],
+    "description": "Returns the ID of the rules channel in the guild, or an empty string if none is configured."
+  },
+  "Zsecond": {
+    "prefix": "Zsecond",
+    "body": [
+      "Zsecond{}"
+    ],
+    "description": "Returns the current second using the active timezone."
+  },
+  "ZsendEmbed": {
+    "prefix": "ZsendEmbed",
+    "body": [
+      "ZsendEmbed{${1:channelID};${2:index};${3:returnID}}"
+    ],
+    "description": "Sends the embed at the specified slot index to a Discord channel, optionally returning the sent message ID."
+  },
+  "ZsendMessage": {
+    "prefix": "ZsendMessage",
+    "body": [
+      "ZsendMessage{${1:channelID};${2:content};${3:returnID}}"
+    ],
+    "description": "Sends a message to the specified channel (or the current channel if omitted), and optionally returns the sent message's ID."
+  },
+  "ZsendWebhook": {
+    "prefix": "ZsendWebhook",
+    "body": [
+      "ZsendWebhook{${1:webhookURL};${2:index};${3:returnID}}"
+    ],
+    "description": "Sends the embed at the specified slot index via a Discord webhook URL, optionally returning the message ID."
+  },
+  "ZserverChannels": {
+    "prefix": "ZserverChannels",
+    "body": [
+      "ZserverChannels{${1:separator};${2:guildID}}"
+    ],
+    "description": "Returns a separator-joined list of channel IDs for the specified server."
+  },
+  "ZserverCooldown": {
+    "prefix": "ZserverCooldown",
+    "body": [
+      "ZserverCooldown{${1:duration};${2:errorMessage}}"
+    ],
+    "description": "Applies a server-wide cooldown that prevents anyone in the server from running the command until the duration expires."
+  },
+  "ZserverCount": {
+    "prefix": "ZserverCount",
+    "body": [
+      "ZserverCount{}"
+    ],
+    "description": "Returns the number of guilds the bot is currently in."
+  },
+  "ZserverDescription": {
+    "prefix": "ZserverDescription",
+    "body": [
+      "ZserverDescription{${1:guildID}}"
+    ],
+    "description": "Returns the description of the guild, or an empty string if none is set."
+  },
+  "ZserverEmojis": {
+    "prefix": "ZserverEmojis",
+    "body": [
+      "ZserverEmojis{${1:guildID};${2:separator}}"
+    ],
+    "description": "Returns the custom emojis of the guild as formatted emoji strings joined by the specified separator."
+  },
+  "ZserverEvents": {
+    "prefix": "ZserverEvents",
+    "body": [
+      "ZserverEvents{}"
+    ],
+    "description": "Returns a space-separated list of all scheduled event IDs in the current server."
+  },
+  "ZserverIcon": {
+    "prefix": "ZserverIcon",
+    "body": [
+      "ZserverIcon{${1:guildID}}"
+    ],
+    "description": "Returns the icon URL of the guild, or an empty string if no icon is set."
+  },
+  "ZserverInvite": {
+    "prefix": "ZserverInvite",
+    "body": [
+      "ZserverInvite{${1:guildID}}"
+    ],
+    "description": "Returns the URL of the first available invite for the guild, or an empty string if none exist."
+  },
+  "ZserverLockdown": {
+    "prefix": "ZserverLockdown",
+    "body": [
+      "ZserverLockdown{${1:enabled};${2:duration}}"
+    ],
+    "description": "Enables or disables guild raid protection (incident actions) with an optional duration."
+  },
+  "ZserverModify": {
+    "prefix": "ZserverModify",
+    "body": [
+      "ZserverModify{${1:guildID};${2:name};${3:icon};${4:banner};${5:splash};${6:description};${7:afkChannelID};${8:afkTimeout};${9:systemChannelID};${10:verificationLevel}}"
+    ],
+    "description": "Edits guild settings such as name, icon, banner, splash, description, and verification level."
+  },
+  "ZserverName": {
+    "prefix": "ZserverName",
+    "body": [
+      "ZserverName{${1:guildID}}"
+    ],
+    "description": "Returns the name of the guild."
+  },
+  "ZserverNames": {
+    "prefix": "ZserverNames",
+    "body": [
+      "ZserverNames{${1:amount};${2:separator}}"
+    ],
+    "description": "Returns a list of the names of all guilds the bot is in, optionally limited to a count and joined by the separator."
+  },
+  "ZserverOwner": {
+    "prefix": "ZserverOwner",
+    "body": [
+      "ZserverOwner{${1:guildID}}"
+    ],
+    "description": "Returns the user ID of the guild owner."
+  },
+  "ZserverRoles": {
+    "prefix": "ZserverRoles",
+    "body": [
+      "ZserverRoles{${1:separator};${2:guildID}}"
+    ],
+    "description": "Returns a separator-joined list of role IDs for the specified server."
+  },
+  "ZserverStickers": {
+    "prefix": "ZserverStickers",
+    "body": [
+      "ZserverStickers{}"
+    ],
+    "description": "Returns a space-separated list of all sticker IDs in the current server."
+  },
+  "ZserverVerificationLevel": {
+    "prefix": "ZserverVerificationLevel",
+    "body": [
+      "ZserverVerificationLevel{}"
+    ],
+    "description": "Returns the verification level of the current guild as a string such as none, low, medium, high, or very_high."
+  },
+  "ZsetChannelVar": {
+    "prefix": "ZsetChannelVar",
+    "body": [
+      "ZsetChannelVar{${1:name};${2:value};${3:channelID}}"
+    ],
+    "description": "Sets the value of a channel-scoped variable, defaulting to the current channel if not specified."
+  },
+  "ZsetPostTags": {
+    "prefix": "ZsetPostTags",
+    "body": [
+      "ZsetPostTags{${1:threadID};${2:tagID};${3:}}"
+    ],
+    "description": "Replaces all applied tags on a forum post thread with the specified tag IDs."
+  },
+  "ZsetServerVar": {
+    "prefix": "ZsetServerVar",
+    "body": [
+      "ZsetServerVar{${1:name};${2:value};${3:guildID}}"
+    ],
+    "description": "Sets the value of a server-scoped variable, defaulting to the current server if not specified."
+  },
+  "ZsetUserRoles": {
+    "prefix": "ZsetUserRoles",
+    "body": [
+      "ZsetUserRoles{${1:userID};${2:roleID};${3:}}"
+    ],
+    "description": "Replaces all roles of the specified user with exactly the provided list of role IDs."
+  },
+  "ZsetUserVar": {
+    "prefix": "ZsetUserVar",
+    "body": [
+      "ZsetUserVar{${1:name};${2:value};${3:userID};${4:guildID}}"
+    ],
+    "description": "Sets the value of a user-scoped variable, defaulting to the current user and server if not specified."
+  },
+  "ZsetVar": {
+    "prefix": "ZsetVar",
+    "body": [
+      "ZsetVar{${1:name};${2:value}}"
+    ],
+    "description": "Sets the value of a global bot-wide variable by name."
+  },
+  "Zsha256": {
+    "prefix": "Zsha256",
+    "body": [
+      "Zsha256{${1:text}}"
+    ],
+    "description": "Returns the SHA-256 hash of the input text as a hex string."
+  },
+  "Zskus": {
+    "prefix": "Zskus",
+    "body": [
+      "Zskus{}"
+    ],
+    "description": "Returns the bot application's SKUs as a JSON array."
+  },
+  "ZslashCommandsCount": {
+    "prefix": "ZslashCommandsCount",
+    "body": [
+      "ZslashCommandsCount{}"
+    ],
+    "description": "Returns the number of slash-type commands loaded from the commands directory."
+  },
+  "ZslashID": {
+    "prefix": "ZslashID",
+    "body": [
+      "ZslashID{${1:name}}"
+    ],
+    "description": "Returns the Discord application command ID for the specified slash command name, or for the currently executing slash command if no name is provided."
+  },
+  "ZslowMode": {
+    "prefix": "ZslowMode",
+    "body": [
+      "ZslowMode{${1:channelID};${2:duration}}"
+    ],
+    "description": "Sets the slowmode rate limit on a channel to the specified duration (0 or 0s disables it)."
+  },
+  "Zsort": {
+    "prefix": "Zsort",
+    "body": [
+      "Zsort{${1:number};${2:};${3:direction};${4:return_amount};${5:separator}}"
+    ],
+    "description": "Sorts a variadic list of numbers in ascending or descending order and returns up to a specified count joined by a separator."
+  },
+  "ZsoundboardCreate": {
+    "prefix": "ZsoundboardCreate",
+    "body": [
+      "ZsoundboardCreate{${1:name};${2:fileUrl}}"
+    ],
+    "description": "Uploads a new sound to the server soundboard from a file URL."
+  },
+  "ZsoundboardDefaultSounds": {
+    "prefix": "ZsoundboardDefaultSounds",
+    "body": [
+      "ZsoundboardDefaultSounds{}"
+    ],
+    "description": "Lists Discord's default soundboard sounds."
+  },
+  "ZsoundboardDelete": {
+    "prefix": "ZsoundboardDelete",
+    "body": [
+      "ZsoundboardDelete{${1:soundId}}"
+    ],
+    "description": "Deletes a sound from the server soundboard."
+  },
+  "ZsoundboardEdit": {
+    "prefix": "ZsoundboardEdit",
+    "body": [
+      "ZsoundboardEdit{${1:soundId};${2:name};${3:volume};${4:emoji}}"
+    ],
+    "description": "Edits a soundboard sound's name, volume, or emoji."
+  },
+  "ZsoundboardPlay": {
+    "prefix": "ZsoundboardPlay",
+    "body": [
+      "ZsoundboardPlay{${1:soundId};${2:voiceChannelId}}"
+    ],
+    "description": "Plays a soundboard sound in a voice channel."
+  },
+  "ZsoundboardSound": {
+    "prefix": "ZsoundboardSound",
+    "body": [
+      "ZsoundboardSound{${1:soundId}}"
+    ],
+    "description": "Gets details of a specific soundboard sound."
+  },
+  "ZsoundboardSounds": {
+    "prefix": "ZsoundboardSounds",
+    "body": [
+      "ZsoundboardSounds{}"
+    ],
+    "description": "Lists all soundboard sounds in the server."
+  },
+  "ZspliceText": {
+    "prefix": "ZspliceText",
+    "body": [
+      "ZspliceText{${1:text};${2:start};${3:length};${4:replacement}}"
+    ],
+    "description": "Modifies a string by removing a specified number of characters starting at a 1-based position and inserting a replacement string in their place."
+  },
+  "ZsplitText": {
+    "prefix": "ZsplitText",
+    "body": [
+      "ZsplitText{${1:index}}"
+    ],
+    "description": "Returns a single element from the stored split text by 1-based index, or use < for the first or > for the last element."
+  },
+  "Zsqrt": {
+    "prefix": "Zsqrt",
+    "body": [
+      "Zsqrt{${1:number}}"
+    ],
+    "description": "Returns the square root of the given non-negative number."
+  },
+  "ZstageCreate": {
+    "prefix": "ZstageCreate",
+    "body": [
+      "ZstageCreate{${1:channelID};${2:topic}}"
+    ],
+    "description": "Creates a new stage instance in the specified stage channel with the given topic."
+  },
+  "ZstageDelete": {
+    "prefix": "ZstageDelete",
+    "body": [
+      "ZstageDelete{${1:channelID}}"
+    ],
+    "description": "Ends and deletes the stage instance associated with the specified stage channel."
+  },
+  "ZstageEdit": {
+    "prefix": "ZstageEdit",
+    "body": [
+      "ZstageEdit{${1:channelID};${2:topic}}"
+    ],
+    "description": "Edits the topic of an existing stage instance in the specified stage channel."
+  },
+  "ZstageTopic": {
+    "prefix": "ZstageTopic",
+    "body": [
+      "ZstageTopic{${1:channelID}}"
+    ],
+    "description": "Returns the current topic of the stage instance in the specified stage channel."
+  },
+  "ZstartsWith": {
+    "prefix": "ZstartsWith",
+    "body": [
+      "ZstartsWith{${1:text};${2:prefix}}"
+    ],
+    "description": "Returns true if the text begins with the specified prefix."
+  },
+  "ZstartThread": {
+    "prefix": "ZstartThread",
+    "body": [
+      "ZstartThread{${1:name};${2:channelID};${3:messageID};${4:archiveDuration};${5:returnID};${6:private}}"
+    ],
+    "description": "Creates a new thread in the specified channel, optionally attaching it to an existing message, and returns the thread ID if requested."
+  },
+  "ZstickerCount": {
+    "prefix": "ZstickerCount",
+    "body": [
+      "ZstickerCount{}"
+    ],
+    "description": "Returns the total number of stickers in the current server."
+  },
+  "ZstickerCreate": {
+    "prefix": "ZstickerCreate",
+    "body": [
+      "ZstickerCreate{${1:name};${2:fileUrl};${3:tags};${4:description}}"
+    ],
+    "description": "Creates a new guild sticker from a file URL."
+  },
+  "ZstickerDescription": {
+    "prefix": "ZstickerDescription",
+    "body": [
+      "ZstickerDescription{${1:stickerID}}"
+    ],
+    "description": "Returns the description of a guild sticker by its sticker ID, or an empty string if no description is set."
+  },
+  "ZstickerEdit": {
+    "prefix": "ZstickerEdit",
+    "body": [
+      "ZstickerEdit{${1:stickerID};${2:name};${3:tags};${4:description}}"
+    ],
+    "description": "Edits a guild sticker's metadata. Use !unchanged for fields to skip."
+  },
+  "ZstickerEmoji": {
+    "prefix": "ZstickerEmoji",
+    "body": [
+      "ZstickerEmoji{${1:stickerID}}"
+    ],
+    "description": "Returns the related emoji tag for a guild sticker as a string."
+  },
+  "ZstickerExists": {
+    "prefix": "ZstickerExists",
+    "body": [
+      "ZstickerExists{${1:stickerID}}"
+    ],
+    "description": "Returns true if a sticker with the given ID exists in the current server, or false otherwise."
+  },
+  "ZstickerID": {
+    "prefix": "ZstickerID",
+    "body": [
+      "ZstickerID{${1:name}}"
+    ],
+    "description": "Returns the ID of a guild sticker matching the given name, or an empty string if not found."
+  },
+  "ZstickerName": {
+    "prefix": "ZstickerName",
+    "body": [
+      "ZstickerName{${1:stickerID}}"
+    ],
+    "description": "Returns the name of a guild sticker by its sticker ID."
+  },
+  "Zstop": {
+    "prefix": "Zstop",
+    "body": [
+      "Zstop{}"
+    ],
+    "description": "Halts execution silently without producing any output or error message."
+  },
+  "Zsub": {
+    "prefix": "Zsub",
+    "body": [
+      "Zsub{${1:value};${2:number};${3:}}"
+    ],
+    "description": "Subtracts each subsequent number from the first value and returns the result."
+  },
+  "Zsubstring": {
+    "prefix": "Zsubstring",
+    "body": [
+      "Zsubstring{${1:text};${2:start};${3:length}}"
+    ],
+    "description": "Returns a portion of the text starting at a 1-based character position, optionally limited to a specified length."
+  },
+  "Zsum": {
+    "prefix": "Zsum",
+    "body": [
+      "Zsum{${1:number};${2:}}"
+    ],
+    "description": "Returns the sum of all provided numbers."
+  },
+  "ZsuppressErrors": {
+    "prefix": "ZsuppressErrors",
+    "body": [
+      "ZsuppressErrors{${1:errorText};${2:embedIndex}}"
+    ],
+    "description": "Activates error suppression for the current execution, optionally showing a custom message or a specific embed slot instead of the real error."
+  },
+  "ZsyncPerms": {
+    "prefix": "ZsyncPerms",
+    "body": [
+      "ZsyncPerms{${1:channelID}}"
+    ],
+    "description": "Syncs a channel's permissions with its parent category."
+  },
+  "ZsystemChannelID": {
+    "prefix": "ZsystemChannelID",
+    "body": [
+      "ZsystemChannelID{}"
+    ],
+    "description": "Returns the ID of the system messages channel in the current guild, or an empty string if none is configured."
+  },
+  "ZtextSplit": {
+    "prefix": "ZtextSplit",
+    "body": [
+      "ZtextSplit{${1:text};${2:separator}}"
+    ],
+    "description": "Splits a string by a separator and stores the resulting elements for use with other split functions."
+  },
+  "ZthreadAddMember": {
+    "prefix": "ZthreadAddMember",
+    "body": [
+      "ZthreadAddMember{${1:threadID};${2:userID}}"
+    ],
+    "description": "Adds a user to the specified thread by their user ID."
+  },
+  "ZthreadArchive": {
+    "prefix": "ZthreadArchive",
+    "body": [
+      "ZthreadArchive{${1:threadID}}"
+    ],
+    "description": "Archives a thread by its ID."
+  },
+  "ZthreadArchived": {
+    "prefix": "ZthreadArchived",
+    "body": [
+      "ZthreadArchived{${1:threadID}}"
+    ],
+    "description": "Returns true if the thread is archived."
+  },
+  "ZthreadList": {
+    "prefix": "ZthreadList",
+    "body": [
+      "ZthreadList{${1:channelID};${2:active};${3:private}}"
+    ],
+    "description": "Lists threads in a channel. active: true/false. private: true=private archived, false=public archived."
+  },
+  "ZthreadLocked": {
+    "prefix": "ZthreadLocked",
+    "body": [
+      "ZthreadLocked{${1:threadID}}"
+    ],
+    "description": "Returns true if the thread is locked."
+  },
+  "ZthreadMessageCount": {
+    "prefix": "ZthreadMessageCount",
+    "body": [
+      "ZthreadMessageCount{${1:threadID}}"
+    ],
+    "description": "Returns the number of messages in the specified thread."
+  },
+  "ZthreadMetadata": {
+    "prefix": "ZthreadMetadata",
+    "body": [
+      "ZthreadMetadata{${1:threadID}}"
+    ],
+    "description": "Returns JSON metadata for a thread including owner, creation date, and flags."
+  },
+  "ZthreadParentID": {
+    "prefix": "ZthreadParentID",
+    "body": [
+      "ZthreadParentID{${1:threadID}}"
+    ],
+    "description": "Returns the parent channel ID of the thread, or empty string."
+  },
+  "ZthreadPin": {
+    "prefix": "ZthreadPin",
+    "body": [
+      "ZthreadPin{${1:threadID}}"
+    ],
+    "description": "Pins a thread to the top of its parent channel."
+  },
+  "ZthreadRemoveMember": {
+    "prefix": "ZthreadRemoveMember",
+    "body": [
+      "ZthreadRemoveMember{${1:threadID};${2:userID}}"
+    ],
+    "description": "Removes a user from the specified thread by their user ID."
+  },
+  "ZthreadUnarchive": {
+    "prefix": "ZthreadUnarchive",
+    "body": [
+      "ZthreadUnarchive{${1:threadID}}"
+    ],
+    "description": "Unarchives a thread by its ID."
+  },
+  "ZthreadUserCount": {
+    "prefix": "ZthreadUserCount",
+    "body": [
+      "ZthreadUserCount{${1:threadID}}"
+    ],
+    "description": "Returns the total number of members currently in the specified thread."
+  },
+  "Zthumbnail": {
+    "prefix": "Zthumbnail",
+    "body": [
+      "Zthumbnail{${1:url};${2:index}}"
+    ],
+    "description": "Sets the thumbnail image URL on the specified embed slot."
+  },
+  "Ztime": {
+    "prefix": "Ztime",
+    "body": [
+      "Ztime{${1:timezone}}"
+    ],
+    "description": "Sets the active timezone for all subsequent date/time functions, or returns the current timezone name when called with no argument."
+  },
+  "ZtimeDiff": {
+    "prefix": "ZtimeDiff",
+    "body": [
+      "ZtimeDiff{${1:timestamp1};${2:timestamp2};${3:unit}}"
+    ],
+    "description": "Returns the absolute difference between two Unix timestamps in the specified unit such as seconds, minutes, hours, or days."
+  },
+  "Ztimeout": {
+    "prefix": "Ztimeout",
+    "body": [
+      "Ztimeout{${1:userID};${2:duration}}"
+    ],
+    "description": "Applies a communication timeout to a user for the specified duration, up to a maximum of 28 days."
+  },
+  "Ztimestamp": {
+    "prefix": "Ztimestamp",
+    "body": [
+      "Ztimestamp{${1:index}}"
+    ],
+    "description": "Enables the current UTC timestamp display on the specified embed slot."
+  },
+  "Ztitle": {
+    "prefix": "Ztitle",
+    "body": [
+      "Ztitle{${1:text};${2:index}}"
+    ],
+    "description": "Sets the title text on the specified embed slot."
+  },
+  "Ztitlecase": {
+    "prefix": "Ztitlecase",
+    "body": [
+      "Ztitlecase{${1:text}}"
+    ],
+    "description": "Converts the first letter of each word to uppercase and all remaining letters to lowercase."
+  },
+  "ZtitleURL": {
+    "prefix": "ZtitleURL",
+    "body": [
+      "ZtitleURL{${1:url};${2:index}}"
+    ],
+    "description": "Sets a hyperlink URL on the embed's title, requiring a title to already be set on that slot."
+  },
+  "ZtrimContent": {
+    "prefix": "ZtrimContent",
+    "body": [
+      "ZtrimContent{${1:text}}"
+    ],
+    "description": "Collapses multiple consecutive spaces into a single space and trims leading and trailing whitespace."
+  },
+  "ZtrimSpace": {
+    "prefix": "ZtrimSpace",
+    "body": [
+      "ZtrimSpace{${1:text}}"
+    ],
+    "description": "Removes leading and trailing whitespace from the text."
+  },
+  "ZtryRun": {
+    "prefix": "ZtryRun",
+    "body": [
+      "ZtryRun{${1:code};${2:fallback}}"
+    ],
+    "description": "Evaluates the code block and falls back to the fallback block if any error occurs."
+  },
+  "Zunban": {
+    "prefix": "Zunban",
+    "body": [
+      "Zunban{${1:userID}}"
+    ],
+    "description": "Removes the ban for the specified user from the guild."
+  },
+  "Zundeafen": {
+    "prefix": "Zundeafen",
+    "body": [
+      "Zundeafen{${1:userID}}"
+    ],
+    "description": "Removes the server deafen from the specified user so they can hear audio in voice channels again."
+  },
+  "Zunmute": {
+    "prefix": "Zunmute",
+    "body": [
+      "Zunmute{${1:userID}}"
+    ],
+    "description": "Removes the server mute from the specified user in all voice channels."
+  },
+  "ZunpinMessage": {
+    "prefix": "ZunpinMessage",
+    "body": [
+      "ZunpinMessage{${1:channelID};${2:messageID}}"
+    ],
+    "description": "Unpins the specified message in a channel, defaulting to the current channel if no channel ID is provided."
+  },
+  "ZuntimeOut": {
+    "prefix": "ZuntimeOut",
+    "body": [
+      "ZuntimeOut{${1:userID}}"
+    ],
+    "description": "Removes the active communication timeout from a user, restoring their ability to send messages."
+  },
+  "Zupdate": {
+    "prefix": "Zupdate",
+    "body": [
+      "Zupdate{}"
+    ],
+    "description": "Signals that the interaction response should update the original message instead of sending a new reply. Only valid inside interaction handlers (buttons, select menus)."
+  },
+  "Zuppercase": {
+    "prefix": "Zuppercase",
+    "body": [
+      "Zuppercase{${1:text}}"
+    ],
+    "description": "Converts all characters in the text to uppercase."
+  },
+  "Zuptime": {
+    "prefix": "Zuptime",
+    "body": [
+      "Zuptime{}"
+    ],
+    "description": "Returns the bot's uptime since startup, formatted as a human-readable string of days, hours, minutes, and seconds."
+  },
+  "Zurl": {
+    "prefix": "Zurl",
+    "body": [
+      "Zurl{${1:mode};${2:text}}"
+    ],
+    "description": "Encodes or decodes a string using URL percent-encoding based on the specified mode."
+  },
+  "ZuseChannel": {
+    "prefix": "ZuseChannel",
+    "body": [
+      "ZuseChannel{${1:channelID}}"
+    ],
+    "description": "Redirects all bot output for the current command execution to the specified channel."
+  },
+  "ZuserAvatar": {
+    "prefix": "ZuserAvatar",
+    "body": [
+      "ZuserAvatar{${1:userID}}"
+    ],
+    "description": "Returns the avatar URL of the command author, or of the specified user if a user ID is provided."
+  },
+  "ZuserBadge": {
+    "prefix": "ZuserBadge",
+    "body": [
+      "ZuserBadge{${1:userID};${2:separator}}"
+    ],
+    "description": "Returns the public profile badges of the command author or specified user as a separated list."
+  },
+  "ZuserBanner": {
+    "prefix": "ZuserBanner",
+    "body": [
+      "ZuserBanner{${1:userID}}"
+    ],
+    "description": "Returns the banner URL of the command author or specified user, or an empty string if no banner is set."
+  },
+  "ZuserBannerColor": {
+    "prefix": "ZuserBannerColor",
+    "body": [
+      "ZuserBannerColor{${1:userID}}"
+    ],
+    "description": "Returns the banner accent color of the command author or specified user as a hex string, or an empty string if none is set."
+  },
+  "ZuserExists": {
+    "prefix": "ZuserExists",
+    "body": [
+      "ZuserExists{${1:userID}}"
+    ],
+    "description": "Returns true if the given user ID resolves to a valid Discord user, or false otherwise."
+  },
+  "ZuserID": {
+    "prefix": "ZuserID",
+    "body": [
+      "ZuserID{${1:name}}"
+    ],
+    "description": "Returns the command author's user ID, or searches for and returns the user ID of a guild member matching the given name."
+  },
+  "ZuserJoined": {
+    "prefix": "ZuserJoined",
+    "body": [
+      "ZuserJoined{${1:userID};${2:format}}"
+    ],
+    "description": "Returns the date when the command author or specified user joined the current guild, formatted according to the optional format string."
+  },
+  "Zusername": {
+    "prefix": "Zusername",
+    "body": [
+      "Zusername{${1:userID}}"
+    ],
+    "description": "Returns the username of the command author, or of the specified user if a user ID is provided."
+  },
+  "ZuserPerms": {
+    "prefix": "ZuserPerms",
+    "body": [
+      "ZuserPerms{${1:userID};${2:amount};${3:separator}}"
+    ],
+    "description": "Returns the guild permissions held by the command author or specified user, up to the given amount, joined by the separator."
+  },
+  "ZuserReacted": {
+    "prefix": "ZuserReacted",
+    "body": [
+      "ZuserReacted{${1:channelID};${2:messageID};${3:userID};${4:emoji}}"
+    ],
+    "description": "Returns true if the specified user reacted to a message with the given emoji, or false otherwise."
+  },
+  "ZuserRoles": {
+    "prefix": "ZuserRoles",
+    "body": [
+      "ZuserRoles{${1:userID};${2:returnType};${3:separator}}"
+    ],
+    "description": "Returns a list of the specified user's roles joined by the given separator, with output format controlled by returnType."
+  },
+  "ZuserSelfDeafened": {
+    "prefix": "ZuserSelfDeafened",
+    "body": [
+      "ZuserSelfDeafened{${1:userID}}"
+    ],
+    "description": "Returns true if the specified user has deafened themselves in voice, defaulting to the author."
+  },
+  "ZuserSelfMuted": {
+    "prefix": "ZuserSelfMuted",
+    "body": [
+      "ZuserSelfMuted{${1:userID}}"
+    ],
+    "description": "Returns true if the specified user has muted themselves in voice, defaulting to the author."
+  },
+  "ZuserServerAvatar": {
+    "prefix": "ZuserServerAvatar",
+    "body": [
+      "ZuserServerAvatar{${1:userID}}"
+    ],
+    "description": "Returns the guild-specific avatar URL of the command author or specified user, falling back to their global avatar or default avatar if none is set."
+  },
+  "ZuserServerDeafened": {
+    "prefix": "ZuserServerDeafened",
+    "body": [
+      "ZuserServerDeafened{${1:userID}}"
+    ],
+    "description": "Returns true if the specified user has been server-deafened by a moderator, defaulting to the author."
+  },
+  "ZuserServerMuted": {
+    "prefix": "ZuserServerMuted",
+    "body": [
+      "ZuserServerMuted{${1:userID}}"
+    ],
+    "description": "Returns true if the specified user has been server-muted by a moderator, defaulting to the author."
+  },
+  "ZuserStatus": {
+    "prefix": "ZuserStatus",
+    "body": [
+      "ZuserStatus{${1:userID};${2:customStatus}}"
+    ],
+    "description": "Returns the online status of the command author or specified user, or their custom status text if customStatus is true."
+  },
+  "ZuserStreaming": {
+    "prefix": "ZuserStreaming",
+    "body": [
+      "ZuserStreaming{${1:userID}}"
+    ],
+    "description": "Returns true if the specified user is currently streaming in a voice channel, defaulting to the author."
+  },
+  "ZuserVoiceChannel": {
+    "prefix": "ZuserVoiceChannel",
+    "body": [
+      "ZuserVoiceChannel{${1:userID}}"
+    ],
+    "description": "Returns the ID of the voice channel the specified user is in, or an empty string if they are not in voice."
+  },
+  "Zvar": {
+    "prefix": "Zvar",
+    "body": [
+      "Zvar{${1:name};${2:value}}"
+    ],
+    "description": "Gets or sets a temporary in-memory variable that persists only for the duration of the current command execution."
+  },
+  "ZvarExistError": {
+    "prefix": "ZvarExistError",
+    "body": [
+      "ZvarExistError{${1:name};${2:error}}"
+    ],
+    "description": "Halts execution with a custom error message if the specified global variable does not exist."
+  },
+  "ZvarExists": {
+    "prefix": "ZvarExists",
+    "body": [
+      "ZvarExists{${1:name}}"
+    ],
+    "description": "Returns true if a global variable with the given name exists, otherwise returns false."
+  },
+  "ZvoiceBitrate": {
+    "prefix": "ZvoiceBitrate",
+    "body": [
+      "ZvoiceBitrate{${1:channelID}}"
+    ],
+    "description": "Returns the bitrate in kbps of the specified voice channel, defaulting to the author's current voice channel."
+  },
+  "ZvoiceEmpty": {
+    "prefix": "ZvoiceEmpty",
+    "body": [
+      "ZvoiceEmpty{${1:channelID}}"
+    ],
+    "description": "Returns true if the specified voice channel has zero members; defaults to the author's current voice channel."
+  },
+  "ZvoiceFull": {
+    "prefix": "ZvoiceFull",
+    "body": [
+      "ZvoiceFull{${1:channelID}}"
+    ],
+    "description": "Returns true if the specified voice channel's member count equals its user limit; defaults to the author's current voice channel."
+  },
+  "ZvoiceKick": {
+    "prefix": "ZvoiceKick",
+    "body": [
+      "ZvoiceKick{${1:userID}}"
+    ],
+    "description": "Disconnects the specified user from their current voice channel."
+  },
+  "ZvoiceMemberCount": {
+    "prefix": "ZvoiceMemberCount",
+    "body": [
+      "ZvoiceMemberCount{${1:channelID}}"
+    ],
+    "description": "Returns the number of users currently in the specified voice channel, defaulting to the author's current voice channel."
+  },
+  "ZvoiceMembers": {
+    "prefix": "ZvoiceMembers",
+    "body": [
+      "ZvoiceMembers{${1:channelID}}"
+    ],
+    "description": "Returns a space-separated list of user IDs currently in the specified voice channel, defaulting to the author's current voice channel."
+  },
+  "ZvoiceMove": {
+    "prefix": "ZvoiceMove",
+    "body": [
+      "ZvoiceMove{${1:userID};${2:channelID}}"
+    ],
+    "description": "Moves a user from their current voice channel to the specified target voice channel."
+  },
+  "ZvoiceNew": {
+    "prefix": "ZvoiceNew",
+    "body": [
+      "ZvoiceNew{}"
+    ],
+    "description": "Returns the new voice channel ID from the onVoiceStateUpdate event context (the channel the user moved to)."
+  },
+  "ZvoiceOld": {
+    "prefix": "ZvoiceOld",
+    "body": [
+      "ZvoiceOld{}"
+    ],
+    "description": "Returns the previous voice channel ID from the onVoiceStateUpdate event context (the channel the user was in before)."
+  },
+  "ZvoiceRequestToSpeak": {
+    "prefix": "ZvoiceRequestToSpeak",
+    "body": [
+      "ZvoiceRequestToSpeak{${1:channelID};${2:cancel}}"
+    ],
+    "description": "Requests to speak in a stage channel, or cancels the request if cancel=true."
+  },
+  "ZvoiceStatus": {
+    "prefix": "ZvoiceStatus",
+    "body": [
+      "ZvoiceStatus{${1:channelID};${2:status}}"
+    ],
+    "description": "Gets or sets the status of a voice channel. Returns the current status if no status arg is given."
+  },
+  "ZvoiceSuppress": {
+    "prefix": "ZvoiceSuppress",
+    "body": [
+      "ZvoiceSuppress{${1:userID};${2:suppress};${3:channelID}}"
+    ],
+    "description": "Suppress or unsuppress a user in a stage channel."
+  },
+  "ZvoiceUserLimit": {
+    "prefix": "ZvoiceUserLimit",
+    "body": [
+      "ZvoiceUserLimit{${1:channelID}}"
+    ],
+    "description": "Returns the maximum number of users allowed in a voice or stage channel, or 0 if there is no limit."
+  },
+  "ZwebhookCreate": {
+    "prefix": "ZwebhookCreate",
+    "body": [
+      "ZwebhookCreate{${1:channelID};${2:name}}"
+    ],
+    "description": "Creates a webhook in the specified channel and returns its full URL."
+  },
+  "ZwebhookDelete": {
+    "prefix": "ZwebhookDelete",
+    "body": [
+      "ZwebhookDelete{${1:webhookURL}}"
+    ],
+    "description": "Deletes a webhook identified by its full Discord webhook URL."
+  },
+  "ZwelcomeScreen": {
+    "prefix": "ZwelcomeScreen",
+    "body": [
+      "ZwelcomeScreen{${1:guildID}}"
+    ],
+    "description": "Returns the guild's welcome screen as a JSON object."
+  },
+  "Zyear": {
+    "prefix": "Zyear",
+    "body": [
+      "Zyear{}"
+    ],
+    "description": "Returns the current four-digit year using the active timezone."
+  }
+}

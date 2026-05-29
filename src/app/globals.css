@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  
+  --font-sans: "Inter", "system-ui", "sans-serif";
+  --font-mono: "Menlo", "Monaco", "Courier New", monospace;
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #0a0a0a;
+    --primary: #5865f2;
+    --primary-foreground: #ffffff;
+    --surface: #f3f4f6;
+    --border: #e5e7eb;
+    --muted: #f3f4f6;
+    --muted-foreground: #6b7280;
+    --accent: #5865f2;
+    --accent-foreground: #ffffff;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+  }
+
+  .dark {
+    --background: #13151c;
+    --foreground: #ffffff;
+    --primary: #c2ccff;
+    --primary-foreground: #05060f;
+    --surface: #1e2130;
+    --border: #374151;
+    --muted: #374151;
+    --muted-foreground: #8b92a5;
+    --accent: #c2ccff;
+    --accent-foreground: #05060f;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+@layer utilities {
+  .bg-surface-20 {
+    background-color: color-mix(in srgb, var(--surface) 20%, transparent);
+  }
+  .bg-surface-30 {
+    background-color: color-mix(in srgb, var(--surface) 30%, transparent);
+  }
+  .bg-surface-50 {
+    background-color: color-mix(in srgb, var(--surface) 50%, transparent);
+  }
+  .bg-primary-10 {
+    background-color: color-mix(in srgb, var(--primary) 10%, transparent);
+  }
+  .bg-primary-20 {
+    background-color: color-mix(in srgb, var(--primary) 20%, transparent);
+  }
+  .border-border-50 {
+    border-color: color-mix(in srgb, var(--border) 50%, transparent);
+  }
+}
