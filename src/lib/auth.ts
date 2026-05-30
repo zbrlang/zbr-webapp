@@ -1,24 +1,11 @@
 import NextAuth from "next-auth"
-import DiscordProvider from "next-auth/providers/discord"
 import { FirestoreAdapter } from "@auth/firebase-adapter";
 import { db } from "@/lib/firebase";
+import { authConfig } from "@/auth.config";
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
   adapter: FirestoreAdapter(db),
-  providers: [
-    DiscordProvider({
-      clientId: process.env.DISCORD_CLIENT_ID!,
-      clientSecret: process.env.DISCORD_CLIENT_SECRET!,
-    })
-  ],
-  callbacks: {
-    session({ session, user }) {
-      if (session.user) {
-        session.user.id = user.id;
-      }
-      return session;
-    },
-  },
+  ...authConfig,
 })
 
 export async function getDiscordId(): Promise<string> {
