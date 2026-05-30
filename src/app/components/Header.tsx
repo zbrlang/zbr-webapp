@@ -39,8 +39,9 @@ export default function Header() {
     <>
       <header className="flex items-center justify-between px-6 py-4 border-b border-border-50 bg-background/50 backdrop-blur-md sticky top-0 z-50">
         <div className="flex items-center space-x-4">
-          <Link href="/dashboard" className="h-10 w-10">
+          <Link href="/dashboard" className="h-10 w-10 relative">
             <img src="/ZBR_icon.png" alt="ZBR Logo" className="h-full w-full object-contain" />
+            <span className="absolute -top-1 -right-1 bg-primary text-[8px] text-white px-1 rounded-sm font-black italic">BETA</span>
           </Link>
           <div className="flex flex-col">
             <p className="font-bold leading-none mb-1 text-sm tracking-tight">{username}</p>

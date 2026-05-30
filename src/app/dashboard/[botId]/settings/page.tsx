@@ -3,6 +3,7 @@
 import { use, useState, useEffect } from "react";
 import { toast } from "sonner";
 import ConfirmationModal from "../../../components/ConfirmationModal";
+import ExportGuideModal from "../../../components/ExportGuideModal";
 
 export default function SettingsTab({
   params: paramsPromise,
@@ -15,6 +16,7 @@ export default function SettingsTab({
   const [guildId, setGuildId] = useState("");
   const [isLoginEnabled, setIsLoginEnabled] = useState(true);
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
+  const [isExportModalOpen, setIsExportModalOpen] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [isSecuritySaving, setIsSecuritySaving] = useState(false);
 
@@ -58,6 +60,11 @@ export default function SettingsTab({
     
     toast.success("Security settings updated");
     setIsSecuritySaving(false);
+  };
+
+  const handleExport = () => {
+    window.open(`/api/bots/${botId}/export`);
+    setIsExportModalOpen(false);
   };
 
   const handleDeleteBot = async () => {
@@ -194,6 +201,23 @@ export default function SettingsTab({
                 </div>
               </div>
             </div>
+            <div className="bg-surface-30 p-6 rounded-3xl border border-border-50">
+              <h3 className="text-xs font-black italic uppercase tracking-widest text-primary/80 mb-4">Data Management</h3>
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="font-bold text-sm">Export Project</p>
+                    <p className="text-[10px] text-muted-foreground font-medium">Download your bot configuration as a ZIP file.</p>
+                  </div>
+                  <button 
+                    onClick={() => setIsExportModalOpen(true)}
+                    className="px-4 py-2 bg-primary-10 text-primary border border-primary/20 hover:bg-primary hover:text-accent-foreground transition-all rounded-xl font-black text-[10px] uppercase tracking-widest"
+                  >
+                    Export
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Danger Zone */}
@@ -204,14 +228,8 @@ export default function SettingsTab({
           </div>
           <div className="flex space-x-4">
             <button 
-              onClick={() => window.open(`/api/bots/${botId}/export`)}
-              className="flex-1 px-6 py-4 bg-primary text-accent-foreground rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-primary/90 transition-all"
-            >
-              Export Project
-            </button>
-            <button 
               onClick={() => setIsDeleteModalOpen(true)}
-              className="flex-1 px-6 py-4 bg-destructive/10 text-destructive border border-destructive/20 hover:bg-destructive hover:text-white transition-all rounded-2xl font-black text-xs uppercase tracking-widest"
+              className="w-full px-6 py-4 bg-destructive/10 text-destructive border border-destructive/20 hover:bg-destructive hover:text-white transition-all rounded-2xl font-black text-xs uppercase tracking-widest"
             >
               Delete this Bot
             </button>
@@ -219,6 +237,11 @@ export default function SettingsTab({
           </div>
           </div>
           </section>
+      <ExportGuideModal 
+        isOpen={isExportModalOpen}
+        onClose={() => setIsExportModalOpen(false)}
+        onConfirm={handleExport}
+      />
       <ConfirmationModal 
         isOpen={isDeleteModalOpen}
         onClose={() => setIsDeleteModalOpen(false)}

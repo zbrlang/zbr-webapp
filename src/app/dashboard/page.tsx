@@ -62,7 +62,7 @@ export default function Dashboard() {
           <div className="flex flex-col md:flex-row items-center justify-between mb-20 space-y-8 md:space-y-0 text-center md:text-left">
             <div>
               <h1 className="text-6xl font-black tracking-tighter mb-4 italic uppercase">Your Fleet</h1>
-              <p className="text-muted-foreground text-lg font-medium">Manage and monitor your Discord bot ecosystem.</p>
+              <p className="text-muted-foreground text-lg font-medium">Manage and edit your ZBR Discord bot fleet.</p>
             </div>
             <Link 
               href="/dashboard/new"

@@ -15,14 +15,19 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-6">
       <div className="p-12 bg-surface-20 backdrop-blur-xl rounded-[2.5rem] border border-border-50 w-full max-w-md shadow-2xl text-center">
-        <div className="mb-12">
-          <h1 className="text-5xl font-black tracking-tighter mb-4 italic uppercase">ZBR Dashboard</h1>
+        <div className="mb-10 flex flex-col items-center">
+          <div className="h-20 w-20 bg-primary-10 rounded-3xl flex items-center justify-center text-primary mb-6 border border-primary/10">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
+          </div>
+          <h1 className="text-4xl font-black tracking-tighter mb-2 italic uppercase">ZBR Dashboard</h1>
           <p className="text-muted-foreground font-medium text-sm">
-            The next generation of Discord bot management.
+            Manage and edit your ZBR bots with ease.
           </p>
         </div>
         
-        <div className="space-y-4">
+        <div className="space-y-6">
           <button
             onClick={handleLogin}
             disabled={isLoggingIn}
@@ -42,16 +47,21 @@ export default function LoginPage() {
               </>
             )}
           </button>
+          
+          <div className="flex items-center justify-center space-x-2 text-[10px] font-bold text-muted-foreground uppercase tracking-widest opacity-60">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
+            </svg>
+            <span>Secure authentication powered by Discord</span>
+          </div>
         </div>
         
-        <div className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground mt-12 flex flex-col space-y-2 opacity-50">
-        <p>Secure authentication powered by Discord</p>
-        <div className="flex justify-center space-x-4">
-          <a href="https://zbrlang.vercel.app/terms" className="hover:text-primary transition-colors">Terms</a>
-          <a href="https://zbrlang.vercel.app/privacy" className="hover:text-primary transition-colors">Privacy</a>
+        <div className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground mt-8 flex flex-col space-y-1 opacity-50">
+          <div className="flex justify-center space-x-4">
+            <a href="https://zbrlang.vercel.app/terms" className="hover:text-primary transition-colors">Terms</a>
+            <a href="https://zbrlang.vercel.app/privacy" className="hover:text-primary transition-colors">Privacy</a>
+          </div>
         </div>
-        </div>
-
       </div>
     </div>
   );

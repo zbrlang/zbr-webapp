@@ -53,8 +53,8 @@ export default function BotLayout({
         <h1 className="text-4xl font-extrabold tracking-tight mb-10">{botName}</h1>
 
         {/* Tabs */}
-        <nav className="mb-10 border-b border-border-50">
-          <div className="flex space-x-10 text-sm font-bold tracking-wider">
+        <nav className="mb-10 border-b border-border-50 overflow-x-auto">
+          <div className="flex space-x-10 text-sm font-bold tracking-wider whitespace-nowrap pb-1">
             {tabs.map(tab => (
               <Link
                 key={tab.id}

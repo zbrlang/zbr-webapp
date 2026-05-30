@@ -110,7 +110,7 @@ GUILD_ID=${settings?.guildId || ""}
   return new NextResponse(zipBuffer, {
     headers: {
       "Content-Type": "application/zip",
-      "Content-Disposition": `attachment; filename=bot_${botId}_export.zip`,
+      "Content-Disposition": `attachment; filename=zbr-export-${botId}.zip`,
     },
   });
 }
