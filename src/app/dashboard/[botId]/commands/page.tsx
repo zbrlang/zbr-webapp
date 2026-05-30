@@ -61,32 +61,44 @@ export default function CommandsIndex({
 
       {/* Commands List */}
       <div className="grid grid-cols-1 gap-3">
-        {Array.isArray(commands) ? commands.map((cmd: any) => (
-          <div 
-            key={cmd.id} 
-            onClick={() => router.push(`/dashboard/${botId}/commands/${cmd.id}`)}
-            className="bg-surface-30 backdrop-blur-sm rounded-2xl border border-border-50 p-5 flex items-center justify-between group hover:border-primary/30 transition-all cursor-pointer"
-          >
-            <div className="flex-1 min-w-0">
-              <h3 className="font-bold text-foreground mb-1">{cmd.name}</h3>
-              <p className="text-xs text-muted-foreground font-mono truncate flex items-center">
-                <span className="bg-primary-10 text-primary px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider border border-primary/20 mr-3">{cmd.type}</span>
-                {cmd.trigger}
-              </p>
+        {Array.isArray(commands) && commands.length > 0 ? (
+          commands.map((cmd: any) => (
+            <div 
+              key={cmd.id} 
+              onClick={() => router.push(`/dashboard/${botId}/commands/${cmd.id}`)}
+              className="bg-surface-30 backdrop-blur-sm rounded-2xl border border-border-50 p-5 flex items-center justify-between group hover:border-primary/30 transition-all cursor-pointer"
+            >
+              <div className="flex-1 min-w-0">
+                <h3 className="font-bold text-foreground mb-1">{cmd.name}</h3>
+                <p className="text-xs text-muted-foreground font-mono truncate flex items-center">
+                  <span className="bg-primary-10 text-primary px-1.5 py-0.5 rounded text-[9px] font-black uppercase tracking-wider border border-primary/20 mr-3">{cmd.type}</span>
+                  {cmd.trigger}
+                </p>
+              </div>
+              <div className="flex items-center space-x-1 opacity-0 group-hover:opacity-100 transition-all">
+                <button 
+                  onClick={(e) => { e.stopPropagation(); setSelectedCmd(cmd); }}
+                  className="p-2.5 text-muted-foreground hover:text-destructive hover:bg-destructive/10 rounded-xl transition-all"
+                  title="Delete Command"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2M10 11v6M14 11v6" />
+                  </svg>
+                </button>
+              </div>
             </div>
-            <div className="flex items-center space-x-1 opacity-0 group-hover:opacity-100 transition-all">
-              <button 
-                onClick={(e) => { e.stopPropagation(); setSelectedCmd(cmd); }}
-                className="p-2.5 text-muted-foreground hover:text-destructive hover:bg-destructive/10 rounded-xl transition-all"
-                title="Delete Command"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2M10 11v6M14 11v6" />
-                </svg>
-              </button>
+          ))
+        ) : (
+          <div className="flex flex-col items-center justify-center py-12 text-center bg-surface-20 rounded-3xl border border-dashed border-border-50">
+            <div className="h-16 w-16 bg-primary-10 rounded-2xl flex items-center justify-center text-primary mb-6 border border-primary/10">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
             </div>
+            <h3 className="text-xl font-bold mb-2">No Commands</h3>
+            <p className="text-sm text-muted-foreground max-w-xs mx-auto">Click '+ Create' to add your first command.</p>
           </div>
-        )) : null}
+        )}
       </div>
 
       <ConfirmationModal 
