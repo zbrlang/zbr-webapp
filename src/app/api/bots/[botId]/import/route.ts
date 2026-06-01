@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import * as admin from 'firebase-admin';
 import { db } from "@/lib/firebase";
 import { getDiscordId } from "@/lib/auth";
 import AdmZip from "adm-zip";
@@ -21,6 +22,7 @@ export async function POST(
   const zipEntries = zip.getEntries();
 
   const botRef = db.collection("users").doc(discordId).collection("bots").doc(botId);
+  let importedCommandsCount = 0;
   let importedVarsCount = 0;
 
   for (const entry of zipEntries) {
@@ -41,6 +43,7 @@ export async function POST(
       }
       command.body = lines.slice(bodyIndex).join("\n");
       await botRef.collection("commands").add(command);
+      importedCommandsCount++;
     } else if (entry.entryName === ".env") {
       // ... (.env parsing)
       const envContent = entry.getData().toString("utf8");
@@ -86,6 +89,11 @@ export async function POST(
     }
   }
 
-  console.log(`Imported ${importedVarsCount} variables for bot ${botId}`);
-  return NextResponse.json({ success: true, importedVarsCount });
+  await botRef.update({
+    commandCount: admin.firestore.FieldValue.increment(importedCommandsCount),
+    variableCount: admin.firestore.FieldValue.increment(importedVarsCount)
+  });
+
+  console.log(`Imported ${importedCommandsCount} commands and ${importedVarsCount} variables for bot ${botId}`);
+  return NextResponse.json({ success: true, importedCommandsCount, importedVarsCount });
 }

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import * as admin from 'firebase-admin';
 import { db } from "@/lib/firebase";
 import { getDiscordId } from "@/lib/auth";
 
@@ -64,6 +65,15 @@ export async function POST(
     .doc(botId)
     .collection("commands")
     .add(data);
+
+  await db
+    .collection("users")
+    .doc(discordId)
+    .collection("bots")
+    .doc(botId)
+    .update({
+      commandCount: admin.firestore.FieldValue.increment(1)
+    });
 
   console.log("Firestore write success:", docRef.id);
   return NextResponse.json({ id: docRef.id, ...data });

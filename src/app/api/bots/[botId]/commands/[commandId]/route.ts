@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import * as admin from 'firebase-admin';
 import { db } from "@/lib/firebase";
 import { getDiscordId } from "@/lib/auth";
 
@@ -47,6 +48,15 @@ export async function DELETE(
     .collection("commands")
     .doc(commandId)
     .delete();
+
+  await db
+    .collection("users")
+    .doc(discordId)
+    .collection("bots")
+    .doc(botId)
+    .update({
+      commandCount: admin.firestore.FieldValue.increment(-1)
+    });
 
   return NextResponse.json({ success: true });
 }

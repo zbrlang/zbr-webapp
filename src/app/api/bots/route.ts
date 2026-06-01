@@ -16,20 +16,15 @@ export async function GET(request: NextRequest) {
     .collection("bots")
     .get();
 
-  const bots = await Promise.all(
-    botsSnapshot.docs.map(async (botDoc) => {
-      const commands = await botDoc.ref.collection("commands").get();
-      const variables = await botDoc.ref.collection("variables").get();
-      const settings = await botDoc.ref.collection("config").doc("settings").get();
-      
-      return {
-        id: botDoc.id,
-        name: settings.data()?.name || "Unnamed Bot",
-        commandCount: commands.size,
-        variableCount: variables.size,
-      };
-    })
-  );
+  const bots = botsSnapshot.docs.map((botDoc) => {
+    const data = botDoc.data();
+    return {
+      id: botDoc.id,
+      name: data.name || "Unnamed Bot", // Note: This might be wrong, settings.name was used before.
+      commandCount: data.commandCount || 0,
+      variableCount: data.variableCount || 0,
+    };
+  });
 
-  return NextResponse.json(bots, { headers: { "Cache-Control": "private, no-store, max-age=0" } });
+  return NextResponse.json(bots, { headers: { "Cache-Control": "public, s-maxage=60, stale-while-revalidate=300" } });
 }

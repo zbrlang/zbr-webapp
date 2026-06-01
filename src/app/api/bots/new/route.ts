@@ -31,7 +31,11 @@ export async function POST(request: NextRequest) {
     .collection("users")
     .doc(discordId)
     .collection("bots")
-    .add({});
+    .add({
+      name,
+      commandCount: 0,
+      variableCount: 0,
+    });
 
   const settings: any = { name };
   if (token) {

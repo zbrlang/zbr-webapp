@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import * as admin from 'firebase-admin';
 import { db } from "@/lib/firebase";
 import { getDiscordId } from "@/lib/auth";
 
@@ -40,6 +41,15 @@ export async function POST(
     .doc(botId)
     .collection("variables")
     .add({ ...data, scope: 'global' }); // Default scope for now to fit the UI
+
+  await db
+    .collection("users")
+    .doc(discordId)
+    .collection("bots")
+    .doc(botId)
+    .update({
+      variableCount: admin.firestore.FieldValue.increment(1)
+    });
 
   return NextResponse.json({ id: docRef.id, ...data, scope: 'global' });
 }
