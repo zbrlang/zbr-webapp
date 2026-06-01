@@ -2,6 +2,7 @@
 
 import { use, useState, useEffect } from "react";
 import { toast } from "sonner";
+import { useSWRConfig } from "swr";
 import ConfirmationModal from "../../../components/ConfirmationModal";
 import ExportGuideModal from "../../../components/ExportGuideModal";
 
@@ -67,10 +68,16 @@ export default function SettingsTab({
     setIsExportModalOpen(false);
   };
 
+  const { mutate } = useSWRConfig();
   const handleDeleteBot = async () => {
-    await fetch(`/api/bots/${botId}/settings`, {
+    // Perform server operation
+    await fetch(`/api/bots/${botId}`, {
       method: 'DELETE',
     });
+    
+    // Update local cache: remove the deleted bot after server confirmation
+    await mutate("/api/bots", (bots: any[] = []) => bots.filter(b => b.id !== botId), { revalidate: false });
+    
     toast.error("Bot deleted permanently");
     // Redirect to dashboard
     window.location.href = "/dashboard";
