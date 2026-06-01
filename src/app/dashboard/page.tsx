@@ -3,15 +3,29 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import useSWR from "swr";
+import useSWR, { useSWRConfig } from "swr";
+import { toast } from "sonner";
 import { fetcher } from "@/lib/swr";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 function BotCard({ bot }: { bot: any }) {
   const router = useRouter();
+  const { mutate } = useSWRConfig();
   const { data: meta } = useSWR(`/api/bots/${bot.id}/meta`, fetcher, { revalidateOnFocus: false });
   const metaData = meta || { avatar: null, banner: null };
+
+  const deleteBot = async () => {
+    if (!confirm(`Are you sure you want to delete ${bot.name}?`)) return;
+
+    try {
+        await fetch(`/api/bots/${bot.id}`, { method: 'DELETE' });
+        await mutate("/api/bots", (bots: any[] = []) => bots.filter(b => b.id !== bot.id), { revalidate: false });
+        toast.success("Bot deleted successfully");
+    } catch (e) {
+        toast.error("Failed to delete bot");
+    }
+  };
 
   const getInitials = (name: string) => name.split(" ").map(n => n[0]).join("").toUpperCase();
   const getGradient = (name: string) => {
@@ -23,10 +37,13 @@ function BotCard({ bot }: { bot: any }) {
 
   return (
     <div 
-      className="bg-surface-30 backdrop-blur-xl rounded-[2rem] border border-border-50 hover:border-primary/50 transition-all hover:translate-y-[-4px] cursor-pointer group shadow-xl overflow-hidden flex flex-col"
+      className="bg-surface-30 backdrop-blur-xl rounded-[2rem] border border-border-50 hover:border-primary/50 transition-all hover:translate-y-[-4px] cursor-pointer group shadow-xl overflow-hidden flex flex-col relative"
       onClick={() => router.push(`/dashboard/${bot.id}`)}
     >
-      <div className="h-24 w-full relative transition-transform group-hover:scale-105 duration-500" style={{ background: metaData.banner || getGradient(bot.name) }}>
+      <div 
+        className="h-24 w-full relative transition-transform group-hover:scale-105 duration-500" 
+        style={{ background: metaData.banner || getGradient(bot.name) }}
+      >
         <div className="absolute inset-0 bg-black/5"></div>
       </div>
       <div className="px-6 pb-6 pt-0 relative flex-1">
