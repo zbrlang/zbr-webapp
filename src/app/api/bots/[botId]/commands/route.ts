@@ -1,80 +1,43 @@
-import { NextRequest, NextResponse } from "next/server";
-import * as admin from 'firebase-admin';
-import { db } from "@/lib/firebase";
+import { NextRequest } from "next/server";
 import { getDiscordId } from "@/lib/auth";
+import { botService } from "@/lib/services/botService";
+import { createApiResponse, handleApiError } from "@/lib/api-response";
 
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ botId: string }> }
 ) {
-  const { botId } = await params;
-  const { searchParams } = new URL(request.url);
-  const commandId = searchParams.get("id");
-  let discordId;
   try {
-    discordId = await getDiscordId();
-  } catch {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    const { botId } = await params;
+    const discordId = await getDiscordId();
+    const { searchParams } = new URL(request.url);
+    const commandId = searchParams.get("id");
+
+    const commands = await botService.getCommands(discordId, botId);
+    
+    if (commandId) {
+        const command = commands.find(c => c.id === commandId);
+        return createApiResponse(command || null);
+    }
+
+    return createApiResponse(commands);
+  } catch (error) {
+    return handleApiError(error);
   }
-
-  if (commandId) {
-    const doc = await db
-      .collection("users")
-      .doc(discordId)
-      .collection("bots")
-      .doc(botId)
-      .collection("commands")
-      .doc(commandId)
-      .get();
-    return NextResponse.json(doc.exists ? { id: doc.id, ...doc.data() } : null, { headers: { "Cache-Control": "private, no-store, max-age=0" } });
-  }
-
-  const commandsSnapshot = await db
-    .collection("users")
-    .doc(discordId)
-    .collection("bots")
-    .doc(botId)
-    .collection("commands")
-    .get();
-
-  const commands = commandsSnapshot.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data(),
-  }));
-
-  return NextResponse.json(commands, { headers: { "Cache-Control": "private, no-store, max-age=0" } });
 }
 
 export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ botId: string }> }
 ) {
-  const { botId } = await params;
-  let discordId;
   try {
-    discordId = await getDiscordId();
-  } catch {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    const { botId } = await params;
+    const discordId = await getDiscordId();
+    const data = await request.json();
+
+    const newCommand = await botService.addCommand(discordId, botId, data);
+    return createApiResponse(newCommand);
+  } catch (error) {
+    return handleApiError(error);
   }
-  const data = await request.json();
-
-  const docRef = await db
-    .collection("users")
-    .doc(discordId)
-    .collection("bots")
-    .doc(botId)
-    .collection("commands")
-    .add(data);
-
-  await db
-    .collection("users")
-    .doc(discordId)
-    .collection("bots")
-    .doc(botId)
-    .update({
-      commandCount: admin.firestore.FieldValue.increment(1)
-    });
-
-  console.log("Firestore write success:", docRef.id);
-  return NextResponse.json({ id: docRef.id, ...data });
 }
