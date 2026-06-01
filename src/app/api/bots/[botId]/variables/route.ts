@@ -1,55 +1,36 @@
-import { NextRequest, NextResponse } from "next/server";
-import * as admin from 'firebase-admin';
-import { db } from "@/lib/firebase";
+import { NextRequest } from "next/server";
 import { getDiscordId } from "@/lib/auth";
+import { botService } from "@/lib/services/botService";
+import { createApiResponse, handleApiError } from "@/lib/api-response";
 
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ botId: string }> }
 ) {
-  const { botId } = await params;
-  const discordId = await getDiscordId();
+  try {
+    const { botId } = await params;
+    const discordId = await getDiscordId();
 
-  const varsSnapshot = await db
-    .collection("users")
-    .doc(discordId)
-    .collection("bots")
-    .doc(botId)
-    .collection("variables")
-    .get();
+    const variables = await botService.getVariables(discordId, botId);
 
-  const variables = varsSnapshot.docs.map((doc) => ({
-    id: doc.id,
-    ...doc.data(),
-  }));
-
-  return NextResponse.json(variables, { headers: { "Cache-Control": "private, no-store, max-age=0" } });
+    return createApiResponse(variables);
+  } catch (error) {
+    return handleApiError(error);
+  }
 }
 
 export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ botId: string }> }
 ) {
-  const { botId } = await params;
-  const discordId = await getDiscordId();
-  const data = await request.json();
+  try {
+    const { botId } = await params;
+    const discordId = await getDiscordId();
+    const data = await request.json();
 
-  const docRef = await db
-    .collection("users")
-    .doc(discordId)
-    .collection("bots")
-    .doc(botId)
-    .collection("variables")
-    .add({ ...data, scope: 'global' }); // Default scope for now to fit the UI
-
-  await db
-    .collection("users")
-    .doc(discordId)
-    .collection("bots")
-    .doc(botId)
-    .update({
-      variableCount: admin.firestore.FieldValue.increment(1)
-    });
-
-  return NextResponse.json({ id: docRef.id, ...data, scope: 'global' });
+    const newVariable = await botService.addVariable(discordId, botId, data);
+    return createApiResponse(newVariable);
+  } catch (error) {
+    return handleApiError(error);
+  }
 }

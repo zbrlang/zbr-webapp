@@ -1,62 +1,35 @@
-import { NextRequest, NextResponse } from "next/server";
-import * as admin from 'firebase-admin';
-import { db } from "@/lib/firebase";
+import { NextRequest } from "next/server";
 import { getDiscordId } from "@/lib/auth";
+import { botService } from "@/lib/services/botService";
+import { createApiResponse, handleApiError } from "@/lib/api-response";
 
 export async function PATCH(
   request: NextRequest,
   { params }: { params: Promise<{ botId: string; variableId: string }> }
 ) {
-  const { botId, variableId } = await params;
-  let discordId;
   try {
-    discordId = await getDiscordId();
-  } catch {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    const { botId, variableId } = await params;
+    const discordId = await getDiscordId();
+    const data = await request.json();
+
+    await botService.updateVariable(discordId, botId, variableId, data);
+    return createApiResponse({ success: true });
+  } catch (error) {
+    return handleApiError(error);
   }
-  const data = await request.json();
-
-  await db
-    .collection("users")
-    .doc(discordId)
-    .collection("bots")
-    .doc(botId)
-    .collection("variables")
-    .doc(variableId)
-    .update(data);
-
-  return NextResponse.json({ success: true });
 }
 
 export async function DELETE(
   request: NextRequest,
   { params }: { params: Promise<{ botId: string; variableId: string }> }
 ) {
-  const { botId, variableId } = await params;
-  let discordId;
   try {
-    discordId = await getDiscordId();
-  } catch {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    const { botId, variableId } = await params;
+    const discordId = await getDiscordId();
+
+    await botService.deleteVariable(discordId, botId, variableId);
+    return createApiResponse({ success: true });
+  } catch (error) {
+    return handleApiError(error);
   }
-
-  await db
-    .collection("users")
-    .doc(discordId)
-    .collection("bots")
-    .doc(botId)
-    .collection("variables")
-    .doc(variableId)
-    .delete();
-
-  await db
-    .collection("users")
-    .doc(discordId)
-    .collection("bots")
-    .doc(botId)
-    .update({
-      variableCount: admin.firestore.FieldValue.increment(-1)
-    });
-
-  return NextResponse.json({ success: true });
 }
