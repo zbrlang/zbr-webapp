@@ -4,10 +4,12 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { toast } from "sonner";
+import { useSWRConfig } from "swr";
 import Header from "../../components/Header";
 
 export default function NewBotPage() {
   const router = useRouter();
+  const { mutate } = useSWRConfig();
   const [file, setFile] = useState<File | null>(null);
   const [name, setName] = useState("");
   const [token, setToken] = useState("");
@@ -23,16 +25,25 @@ export default function NewBotPage() {
 
     if (error) {
         toast.error("The token appears to be invalid.");
+    } else {
+        // Wait for server response, then update cache
+        await mutate("/api/bots", (bots: any[] = []) => [...bots, { 
+            id: botId, 
+            name, 
+            commandCount: 0, 
+            variableCount: 0 
+        }], { revalidate: false });
     }
 
     // Import project if file provided
-    if (file) {
+    if (file && botId) {
 
       const formData = new FormData();
       formData.append('file', file);
       await fetch(`/api/bots/${botId}/import`, { method: 'POST', body: formData });
     }
 
+    await mutate("/api/bots");
     toast.success(`Bot "${name}" added successfully!`);
     setIsSubmitting(false);
     router.push("/dashboard");
