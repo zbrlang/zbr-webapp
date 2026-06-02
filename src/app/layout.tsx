@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full antialiased" id="root-html" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/ZBR_logo.png" />
+        <link rel="icon" href="https://zbrlang.vercel.app/images/zbr.png" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
