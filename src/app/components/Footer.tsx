@@ -12,10 +12,10 @@ export default function Footer() {
         </div>
 
         <div className="flex items-center space-x-6 text-[10px] font-black uppercase tracking-widest text-muted-foreground">
-          <Link href="https://zbrlang.vercel.app/" className="hover:text-primary transition-colors">Website</Link>
-          <Link href="https://zbrlang.vercel.app/docs" className="hover:text-primary transition-colors">Docs</Link>
-          <Link href="http://zbrlang.vercel.app/docs/guides/webapp-getting-started" className="hover:text-primary transition-colors">Help</Link>
-          <Link href="https://github.com/zbrlang" className="hover:text-primary transition-colors">Github</Link>
+          <Link href="https://zbrlang.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Website</Link>
+          <Link href="https://zbrlang.vercel.app/docs" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Docs</Link>
+          <Link href="http://zbrlang.vercel.app/docs/guides/webapp-getting-started" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Help</Link>
+          <Link href="https://github.com/zbrlang" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">Github</Link>
           <span className="h-3 w-px bg-border/50"></span>
           <span className="text-foreground/40 font-medium normal-case tracking-normal italic">© 2026 zbrlang</span>
         </div>

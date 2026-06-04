@@ -41,7 +41,6 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           <Link href="/dashboard" className="h-10 w-10 relative">
             <img src="https://zbrlang.vercel.app/images/zbr-icon.png" alt="ZBR Logo" className="h-full w-full object-contain" />
-            <span className="absolute -top-1 -right-1 bg-primary text-[8px] text-white px-1 rounded-sm font-black italic">BETA</span>
           </Link>
           <div className="flex flex-col">
             <p className="font-bold leading-none mb-1 text-sm tracking-tight">{username}</p>

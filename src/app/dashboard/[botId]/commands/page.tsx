@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { use } from "react";
 import { toast } from "sonner";
 import { useRouter } from "next/navigation";
