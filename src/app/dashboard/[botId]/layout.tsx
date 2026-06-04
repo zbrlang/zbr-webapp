@@ -41,7 +41,7 @@ export default function BotLayout({
       const data = await response.json();
       if (data.success) {
         setProcessStatus(data.status);
-        toast.success(`Bot ${action}ned successfully!`);
+        toast.success(`Bot ${action === 'run' ? 'started' : 'stopped'} successfully!`);
       } else {
         throw new Error("Action failed");
       }
@@ -86,7 +86,11 @@ export default function BotLayout({
               <button 
                 onClick={() => handleProcessAction(processStatus === 'stopped' ? 'run' : 'stop')} 
                 disabled={isProcessLoading} 
-                className="px-5 py-2.5 bg-primary text-accent-foreground rounded-xl font-black text-xs tracking-widest hover:bg-primary/90 transition-all shadow-lg shadow-primary/20 flex items-center space-x-2 italic uppercase disabled:opacity-50"
+                className={`px-5 py-2.5 rounded-xl font-black text-xs tracking-widest transition-all shadow-lg flex items-center space-x-2 italic uppercase disabled:opacity-50 ${
+                  processStatus === 'stopped' 
+                    ? "bg-primary text-accent-foreground hover:bg-primary/90 shadow-primary/20" 
+                    : "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-destructive/20"
+                }`}
               >
                 {isProcessLoading ? (
                   <>
@@ -94,10 +98,10 @@ export default function BotLayout({
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    <span>Starting</span>
+                    <span>{processStatus === 'stopped' ? 'RUNNING...' : 'STOPPING...'}</span>
                   </>
                 ) : (
-                  <span>{processStatus === 'stopped' ? 'RUN' : 'STOP'}</span>
+                  <span>{processStatus === 'stopped' ? 'RUN THE BOT' : 'STOP THE BOT'}</span>
                 )}
               </button>
             </div>
