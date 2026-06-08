@@ -72,17 +72,27 @@ export default function BotLayout({
     try {
       const response = await fetch(`/api/bots/${botId}/${action}`, { method: 'POST' });
       const data = await response.json();
-      if (data.success) {
-        setProcessStatus(action === 'run' ? 'running' : 'stopped');
-        if (action === 'run') setStartedAt(Date.now());
-        else setStartedAt(null);
-        toast.success(`Bot ${action === 'run' ? 'started' : 'stopped'} successfully!`);
+      
+      if (action === 'stop') {
+        setProcessStatus('stopped');
+        setStartedAt(null);
+        setRemainingTime(null);
+        toast.success("Bot stopped successfully!");
+      } else if (data.success) {
+        setProcessStatus('running');
+        toast.success("Bot started successfully!");
       } else {
         throw new Error("Action failed");
-      }
+      }    
+      fetch(`/api/bots/${botId}/status`)
+        .then(res => res.json())
+        .then(data => {
+            setProcessStatus(data.status || "stopped");
+            setStartedAt(data.startedAt || null);
+        });
     } catch (e) {
       toast.error(`Failed to ${action} bot`);
-    } finally {
+      } finally {
       setIsProcessLoading(false);
     }
   };
