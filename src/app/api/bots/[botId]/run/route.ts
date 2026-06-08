@@ -34,11 +34,11 @@ export async function POST(
       })
     });
 
-    const responseBody = await response.json();
+    const responseBody = await response.text();
     console.log("ZBR server response status:", response.status);
     console.log("ZBR server response body:", responseBody);
 
-    if (!response.ok) throw new Error("Failed to start bot");
+    if (!response.ok) throw new Error(responseBody || "Failed to start bot");
 
     await db.collection("users").doc(discordId).collection("bots").doc(botId).collection("config").doc("status").set({ processStatus: "running" }, { merge: true });
     return createApiResponse({ success: true, status: "running" });

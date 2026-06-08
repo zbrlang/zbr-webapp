@@ -18,6 +18,7 @@ export function handleApiError(error: unknown) {
   if (error instanceof ZodError) {
     return createApiResponse(null, { status: 400, error: 'Invalid request data: ' + error.message });
   }
+  const message = error instanceof Error ? error.message : 'Internal Server Error';
   console.error("API Error:", error);
-  return createApiResponse(null, { status: 500, error: 'Internal Server Error' });
+  return createApiResponse(null, { status: 500, error: message });
 }

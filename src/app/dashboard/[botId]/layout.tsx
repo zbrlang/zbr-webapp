@@ -91,7 +91,7 @@ export default function BotLayout({
             setStartedAt(data.startedAt || null);
         });
     } catch (e) {
-      toast.error(`Failed to ${action} bot`);
+      toast.error(e instanceof Error ? e.message : `Failed to ${action} bot`);
       } finally {
       setIsProcessLoading(false);
     }
