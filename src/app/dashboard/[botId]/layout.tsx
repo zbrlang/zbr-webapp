@@ -17,6 +17,8 @@ export default function BotLayout({
   const pathname = usePathname();
   const [botName, setBotName] = useState("Loading...");
   const [processStatus, setProcessStatus] = useState("stopped");
+  const [startedAt, setStartedAt] = useState<number | null>(null);
+  const [remainingTime, setRemainingTime] = useState<number | null>(null);
   const [isProcessLoading, setIsProcessLoading] = useState(false);
 
   useEffect(() => {
@@ -27,12 +29,43 @@ export default function BotLayout({
     const fetchStatus = () =>
       fetch(`/api/bots/${botId}/status`)
         .then(res => res.json())
-        .then(data => setProcessStatus(data.processStatus || "stopped"));
+        .then(data => {
+            setProcessStatus(data.status || "stopped");
+            setStartedAt(data.startedAt || null);
+        });
 
     fetchStatus();
-    const interval = setInterval(fetchStatus, 5000);
+    const interval = setInterval(fetchStatus, 30000);
     return () => clearInterval(interval);
   }, [botId]);
+
+  useEffect(() => {
+    if (processStatus === 'running' && startedAt) {
+      const timer = setInterval(() => {
+        const elapsed = Date.now() - startedAt;
+        const total = 2 * 60 * 60 * 1000;
+        const remaining = total - elapsed;
+        if (remaining <= 0) {
+            setRemainingTime(0);
+            setProcessStatus('stopped');
+            setStartedAt(null);
+        } else {
+            setRemainingTime(remaining);
+        }
+      }, 1000);
+      return () => clearInterval(timer);
+    } else {
+        setRemainingTime(null);
+    }
+  }, [processStatus, startedAt]);
+
+  const formatTime = (ms: number) => {
+    const totalSeconds = Math.floor(ms / 1000);
+    const h = Math.floor(totalSeconds / 3600);
+    const m = Math.floor((totalSeconds % 3600) / 60);
+    const s = totalSeconds % 60;
+    return `${h}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+  };
 
   const handleProcessAction = async (action: 'run' | 'stop') => {
     setIsProcessLoading(true);
@@ -40,7 +73,9 @@ export default function BotLayout({
       const response = await fetch(`/api/bots/${botId}/${action}`, { method: 'POST' });
       const data = await response.json();
       if (data.success) {
-        setProcessStatus(data.status);
+        setProcessStatus(action === 'run' ? 'running' : 'stopped');
+        if (action === 'run') setStartedAt(Date.now());
+        else setStartedAt(null);
         toast.success(`Bot ${action === 'run' ? 'started' : 'stopped'} successfully!`);
       } else {
         throw new Error("Action failed");
@@ -101,7 +136,11 @@ export default function BotLayout({
                     <span>{processStatus === 'stopped' ? 'RUNNING...' : 'STOPPING...'}</span>
                   </>
                 ) : (
-                  <span>{processStatus === 'stopped' ? 'RUN THE BOT' : 'STOP THE BOT'}</span>
+                  <span>
+                    {processStatus === 'stopped' 
+                        ? 'RUN THE BOT' 
+                        : `STOP THE BOT ${remainingTime !== null ? `(${formatTime(remainingTime)})` : ''}`}
+                  </span>
                 )}
               </button>
             </div>
