@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Toaster } from "sonner";
 import { SessionProvider } from "next-auth/react";
+import { RateLimitProvider } from "./components/RateLimitProvider";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -36,7 +37,9 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300">
         <SessionProvider>
-          {children}
+          <RateLimitProvider>
+            {children}
+          </RateLimitProvider>
           <Toaster position="bottom-right" richColors theme="dark" />
         </SessionProvider>
       </body>
