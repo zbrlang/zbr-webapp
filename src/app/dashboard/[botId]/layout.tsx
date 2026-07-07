@@ -30,7 +30,7 @@ export default function BotLayout({
       fetch(`/api/bots/${botId}/status`)
         .then(res => res.json())
         .then(data => {
-            setProcessStatus(data.status || "stopped");
+            setProcessStatus(data.processStatus || "stopped");
             setStartedAt(data.startedAt || null);
         });
 
