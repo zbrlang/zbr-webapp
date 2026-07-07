@@ -13,7 +13,7 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
-  
+
   --font-sans: "Inter", "system-ui", "sans-serif";
   --font-mono: "Menlo", "Monaco", "Courier New", monospace;
 }

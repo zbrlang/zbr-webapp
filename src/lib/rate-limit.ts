@@ -34,8 +34,16 @@ export function rateLimit(
   entry.count += 1;
 
   if (entry.count > limit) {
-    return { allowed: false, remaining: 0, resetAt: entry.windowStart + windowMs };
+    return {
+      allowed: false,
+      remaining: 0,
+      resetAt: entry.windowStart + windowMs,
+    };
   }
 
-  return { allowed: true, remaining: limit - entry.count, resetAt: entry.windowStart + windowMs };
+  return {
+    allowed: true,
+    remaining: limit - entry.count,
+    resetAt: entry.windowStart + windowMs,
+  };
 }

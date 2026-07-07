@@ -8,19 +8,19 @@ export default function (hljs: any) {
 
       {
         begin: /Z[a-zA-Z_][a-zA-Z0-9_]*\{/,
-        beginScope: 'title.function',
+        beginScope: "title.function",
         end: /\}/,
-        endScope: 'punctuation',
-        contains: ['self'],
+        endScope: "punctuation",
+        contains: ["self"],
         relevance: 10,
       },
 
       {
         begin: /on[a-zA-Z_][a-zA-Z0-9_]*\{/,
-        beginScope: 'tag',
+        beginScope: "tag",
         end: /\}/,
-        endScope: 'punctuation',
-        contains: ['self'],
+        endScope: "punctuation",
+        contains: ["self"],
         relevance: 10,
       },
 

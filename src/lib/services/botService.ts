@@ -1,6 +1,6 @@
 import { db } from "@/lib/firebase";
 import { Bot } from "@/lib/types/bot";
-import * as admin from 'firebase-admin';
+import * as admin from "firebase-admin";
 import { encrypt, decrypt } from "@/lib/crypto";
 
 export const botService = {
@@ -22,20 +22,24 @@ export const botService = {
     });
   },
 
-  async createBot(discordId: string, name: string, token?: string): Promise<{ botId: string, botIdFromToken: string | null }> {
+  async createBot(
+    discordId: string,
+    name: string,
+    token?: string,
+  ): Promise<{ botId: string; botIdFromToken: string | null }> {
     let botIdFromToken = null;
     if (token) {
-        try {
-            const response = await fetch("https://discord.com/api/v10/users/@me", {
-                headers: { Authorization: `Bot ${token}` },
-            });
-            if (response.ok) {
-                const data = await response.json();
-                botIdFromToken = data.id;
-            }
-        } catch(e) {
-            console.error("Failed to fetch bot ID", e);
+      try {
+        const response = await fetch("https://discord.com/api/v10/users/@me", {
+          headers: { Authorization: `Bot ${token}` },
+        });
+        if (response.ok) {
+          const data = await response.json();
+          botIdFromToken = data.id;
         }
+      } catch (e) {
+        console.error("Failed to fetch bot ID", e);
+      }
     }
 
     const botRef = await db
@@ -56,73 +60,173 @@ export const botService = {
       settings.botId = botIdFromToken;
     }
 
-    await botRef
-      .collection("config")
-      .doc("settings")
-      .set(settings);
+    await botRef.collection("config").doc("settings").set(settings);
 
     return { botId: botRef.id, botIdFromToken };
   },
 
   async getCommands(discordId: string, botId: string) {
-    const snapshot = await db.collection("users").doc(discordId).collection("bots").doc(botId).collection("commands").get();
+    const snapshot = await db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId)
+      .collection("commands")
+      .get();
     return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
   },
 
   async addCommand(discordId: string, botId: string, data: any) {
-    const docRef = await db.collection("users").doc(discordId).collection("bots").doc(botId).collection("commands").add(data);
-    await db.collection("users").doc(discordId).collection("bots").doc(botId).update({ commandCount: admin.firestore.FieldValue.increment(1) });
+    const docRef = await db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId)
+      .collection("commands")
+      .add(data);
+    await db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId)
+      .update({ commandCount: admin.firestore.FieldValue.increment(1) });
     return { id: docRef.id, ...data };
   },
 
-  async updateCommand(discordId: string, botId: string, commandId: string, data: any) {
-    await db.collection("users").doc(discordId).collection("bots").doc(botId).collection("commands").doc(commandId).set(data, { merge: true });
+  async updateCommand(
+    discordId: string,
+    botId: string,
+    commandId: string,
+    data: any,
+  ) {
+    await db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId)
+      .collection("commands")
+      .doc(commandId)
+      .set(data, { merge: true });
   },
 
   async deleteCommand(discordId: string, botId: string, commandId: string) {
-    await db.collection("users").doc(discordId).collection("bots").doc(botId).collection("commands").doc(commandId).delete();
-    await db.collection("users").doc(discordId).collection("bots").doc(botId).update({ commandCount: admin.firestore.FieldValue.increment(-1) });
+    await db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId)
+      .collection("commands")
+      .doc(commandId)
+      .delete();
+    await db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId)
+      .update({ commandCount: admin.firestore.FieldValue.increment(-1) });
   },
 
   async getVariables(discordId: string, botId: string) {
-    const snapshot = await db.collection("users").doc(discordId).collection("bots").doc(botId).collection("variables").get();
+    const snapshot = await db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId)
+      .collection("variables")
+      .get();
     return snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
   },
 
   async addVariable(discordId: string, botId: string, data: any) {
-    const docRef = await db.collection("users").doc(discordId).collection("bots").doc(botId).collection("variables").add({ ...data, scope: 'global' });
-    await db.collection("users").doc(discordId).collection("bots").doc(botId).update({ variableCount: admin.firestore.FieldValue.increment(1) });
-    return { id: docRef.id, ...data, scope: 'global' };
+    const docRef = await db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId)
+      .collection("variables")
+      .add({ ...data, scope: "global" });
+    await db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId)
+      .update({ variableCount: admin.firestore.FieldValue.increment(1) });
+    return { id: docRef.id, ...data, scope: "global" };
   },
 
-  async updateVariable(discordId: string, botId: string, variableId: string, data: any) {
-    await db.collection("users").doc(discordId).collection("bots").doc(botId).collection("variables").doc(variableId).update(data);
+  async updateVariable(
+    discordId: string,
+    botId: string,
+    variableId: string,
+    data: any,
+  ) {
+    await db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId)
+      .collection("variables")
+      .doc(variableId)
+      .update(data);
   },
 
   async deleteVariable(discordId: string, botId: string, variableId: string) {
-    await db.collection("users").doc(discordId).collection("bots").doc(botId).collection("variables").doc(variableId).delete();
-    await db.collection("users").doc(discordId).collection("bots").doc(botId).update({ variableCount: admin.firestore.FieldValue.increment(-1) });
+    await db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId)
+      .collection("variables")
+      .doc(variableId)
+      .delete();
+    await db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId)
+      .update({ variableCount: admin.firestore.FieldValue.increment(-1) });
   },
 
   async getStatus(discordId: string, botId: string) {
-    const doc = await db.collection("users").doc(discordId).collection("bots").doc(botId).collection("config").doc("status").get();
+    const doc = await db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId)
+      .collection("config")
+      .doc("status")
+      .get();
     return doc.exists ? doc.data() : {};
   },
 
   async setStatus(discordId: string, botId: string, data: any) {
     const zbrConfig = {
-        status: data.status,
-        activity: {
-          name: data.activityName,
-          type: data.activityType,
-        },
-        logging: data.isLoggingEnabled,
-      };
-    await db.collection("users").doc(discordId).collection("bots").doc(botId).collection("config").doc("status").set(zbrConfig);
+      status: data.status,
+      activity: {
+        name: data.activityName,
+        type: data.activityType,
+      },
+      logging: data.isLoggingEnabled,
+    };
+    await db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId)
+      .collection("config")
+      .doc("status")
+      .set(zbrConfig);
   },
 
   async getSettings(discordId: string, botId: string) {
-    const doc = await db.collection("users").doc(discordId).collection("bots").doc(botId).collection("config").doc("settings").get();
+    const doc = await db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId)
+      .collection("config")
+      .doc("settings")
+      .get();
     if (!doc.exists) return {};
     const data = doc.data();
     if (data?.botToken) {
@@ -135,23 +239,34 @@ export const botService = {
     const settings: any = { ...data };
     let tokenError = false;
     if (settings.botToken) {
-        const response = await fetch("https://discord.com/api/v10/users/@me", {
-            headers: { Authorization: `Bot ${settings.botToken}` },
-        });
-        if (response.ok) {
-            const botData = await response.json();
-            settings.botId = botData.id;
-        } else {
-            tokenError = true;
-        }
-        settings.botToken = encrypt(settings.botToken);
+      const response = await fetch("https://discord.com/api/v10/users/@me", {
+        headers: { Authorization: `Bot ${settings.botToken}` },
+      });
+      if (response.ok) {
+        const botData = await response.json();
+        settings.botId = botData.id;
+      } else {
+        tokenError = true;
+      }
+      settings.botToken = encrypt(settings.botToken);
     }
-    await db.collection("users").doc(discordId).collection("bots").doc(botId).collection("config").doc("settings").set(settings, { merge: true });
+    await db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId)
+      .collection("config")
+      .doc("settings")
+      .set(settings, { merge: true });
     return { tokenError };
   },
 
   async deleteBot(discordId: string, botId: string) {
-      const botRef = db.collection("users").doc(discordId).collection("bots").doc(botId);
-      await db.recursiveDelete(botRef);
-  }
+    const botRef = db
+      .collection("users")
+      .doc(discordId)
+      .collection("bots")
+      .doc(botId);
+    await db.recursiveDelete(botRef);
+  },
 };

@@ -10,7 +10,7 @@ interface ConfirmationModalProps {
   title: string;
   description: ReactNode;
   confirmText: string;
-  confirmValue?: string; // The value user needs to type to confirm (e.g. username or ID)
+  confirmValue?: string;
   isDanger?: boolean;
 }
 
@@ -31,7 +31,6 @@ export default function ConfirmationModal({
     setMounted(true);
   }, []);
 
-  // Lock scroll when modal is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -49,7 +48,10 @@ export default function ConfirmationModal({
 
   const modalContent = (
     <div className="fixed inset-0 z-[9999] flex items-center justify-center p-4">
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-md" onClick={onClose}></div>
+      <div
+        className="absolute inset-0 bg-background/80 backdrop-blur-md"
+        onClick={onClose}
+      ></div>
       <div className="relative w-full max-w-md max-h-[90vh] bg-surface border border-border-50 rounded-3xl p-6 md:p-8 shadow-2xl animate-in zoom-in-95 duration-200 overflow-y-auto">
         <h3 className="text-2xl font-black mb-2 italic uppercase">{title}</h3>
         <div className="text-muted-foreground text-sm mb-6">{description}</div>
@@ -57,7 +59,9 @@ export default function ConfirmationModal({
         {confirmValue && (
           <div className="mb-6 space-y-2">
             <label className="text-[10px] font-black uppercase tracking-widest text-muted-foreground ml-1">
-              Type <span className="text-foreground select-all">{confirmValue}</span> to confirm
+              Type{" "}
+              <span className="text-foreground select-all">{confirmValue}</span>{" "}
+              to confirm
             </label>
             <input
               type="text"

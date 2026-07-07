@@ -9,6 +9,5 @@ export default function BotPage({
   params: Promise<{ botId: string }>;
 }) {
   const params = use(paramsPromise);
-  // By default, the bot page shows the commands index
   return <CommandsIndex params={params} />;
 }

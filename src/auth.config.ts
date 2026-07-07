@@ -1,5 +1,5 @@
-import type { NextAuthConfig } from "next-auth"
-import DiscordProvider from "next-auth/providers/discord"
+import type { NextAuthConfig } from "next-auth";
+import DiscordProvider from "next-auth/providers/discord";
 
 export const authConfig = {
   providers: [
@@ -8,7 +8,7 @@ export const authConfig = {
       clientSecret: process.env.DISCORD_CLIENT_SECRET,
     }),
   ],
-  session: { 
+  session: {
     strategy: "jwt",
     maxAge: 30 * 24 * 60 * 60, // 30 days
   },

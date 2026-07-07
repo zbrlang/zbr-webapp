@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import { z } from "zod";
 
 export const BotSchema = z.object({
   id: z.string(),
@@ -24,7 +24,7 @@ export const VariableSchema = z.object({
   id: z.string().optional(),
   name: z.string(),
   value: z.string(),
-  scope: z.string().default('global'),
+  scope: z.string().default("global"),
 });
 
 export const StatusSchema = z.object({
