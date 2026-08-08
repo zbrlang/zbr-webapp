@@ -44,7 +44,7 @@ export default function Header() {
         <div className="flex items-center space-x-4">
           <Link href="/dashboard" className="h-10 w-10 relative">
             <img
-              src="https://zbrlang.vercel.app/images/zbr-icon.png"
+              src="https://zbrlang.tech/images/zbr-icon.png"
               alt="ZBR Logo"
               className="h-full w-full object-contain"
             />

@@ -17,7 +17,7 @@ export default function Footer() {
 
         <div className="flex items-center space-x-6 text-[10px] font-black uppercase tracking-widest text-muted-foreground">
           <Link
-            href="https://zbrlang.vercel.app/"
+            href="https://zbrlang.tech/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-colors"
@@ -25,7 +25,7 @@ export default function Footer() {
             Website
           </Link>
           <Link
-            href="https://zbrlang.vercel.app/docs"
+            href="https://docs.zbrlang.tech/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-colors"
@@ -33,7 +33,7 @@ export default function Footer() {
             Docs
           </Link>
           <Link
-            href="http://zbrlang.vercel.app/docs/guides/webapp-getting-started"
+            href="https://docs.zbrlang.tech/guides/webapp-getting-started"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-colors"

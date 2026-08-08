@@ -22,7 +22,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        <link rel="icon" href="https://zbrlang.vercel.app/images/zbr.png" />
+        <link rel="icon" href="https://zbrlang.tech/images/zbr.png" />
         <script
           dangerouslySetInnerHTML={{
             __html: `

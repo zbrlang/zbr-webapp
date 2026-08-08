@@ -58,8 +58,8 @@ export default function LoginPage() {
         
         <div className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground mt-8 flex flex-col space-y-1 opacity-50">
           <div className="flex justify-center space-x-4">
-            <a href="https://zbrlang.vercel.app/terms" className="hover:text-primary transition-colors">Terms</a>
-            <a href="https://zbrlang.vercel.app/privacy" className="hover:text-primary transition-colors">Privacy</a>
+            <a href="https://zbrlang.tech/terms" className="hover:text-primary transition-colors">Terms</a>
+            <a href="https://zbrlang.tech/privacy" className="hover:text-primary transition-colors">Privacy</a>
           </div>
         </div>
       </div>
