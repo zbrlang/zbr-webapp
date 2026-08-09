@@ -1,12 +1,30 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Toaster } from "sonner";
 import { SessionProvider } from "next-auth/react";
 import { RateLimitProvider } from "./components/RateLimitProvider";
 import "./globals.css";
 
+export const viewport: Viewport = {
+  themeColor: "#ffffff",
+};
+
 export const metadata: Metadata = {
   title: "ZBR Dashboard",
-  description: "Dashboard for managing ZBR Discord bots",
+  description:
+    "Dashboard for managing ZBR Discord bots",
+  openGraph: {
+    title: "ZBR Dashboard",
+    description:
+      "Dashboard for managing ZBR Discord bots",
+    url: "https://app.zbrlang.tech/",
+    siteName: "ZBR",
+    locale: "en_US",
+    type: "website",
+    images: [{ url: "/images/zbr.png" }],
+  },
+  twitter: {
+    card: "summary",
+  },
 };
 
 export default function RootLayout({
