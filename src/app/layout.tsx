@@ -17,10 +17,10 @@ export const metadata: Metadata = {
     description:
       "Dashboard for managing ZBR Discord bots",
     url: "https://app.zbrlang.tech/",
-    siteName: "ZBR",
+    siteName: "ZBRLang",
     locale: "en_US",
     type: "website",
-    images: [{ url: "/images/zbr.png" }],
+    images: [{ url: "https://zbrlang.tech/images/zbr.png" }],
   },
   twitter: {
     card: "summary",
