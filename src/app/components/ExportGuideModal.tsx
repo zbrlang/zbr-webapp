@@ -55,25 +55,16 @@ export default function ExportGuideModal({
               <span className="text-[10px] font-black uppercase tracking-widest text-primary">
                 Step 1: Install ZBR CLI
               </span>
-              <div className="bg-background/50 border border-border-50 rounded-xl p-3 font-mono text-xs flex items-center justify-between group">
-                <code>npm i -g @zbrlang/zbr</code>
-                <button
-                  onClick={() =>
-                    navigator.clipboard.writeText("npm i -g @zbrlang/zbr")
-                  }
-                  className="opacity-0 group-hover:opacity-100 p-1.5 hover:bg-primary-10 rounded transition-all text-primary"
+              <p className="text-xs text-muted-foreground">
+                <a 
+                  href="https://docs.zbrlang.tech/docs/guides/installation" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-primary underline hover:opacity-80"
                 >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-3 w-3"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                  >
-                    <path d="M8 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z" />
-                    <path d="M6 3a2 2 0 00-2 2v11a2 2 0 002 2h8a2 2 0 002-2V5a2 2 0 00-2-2 3 3 0 01-3 3H9a3 3 0 01-3-3z" />
-                  </svg>
-                </button>
-              </div>
+                  Follow the installation guide
+                </a> to install the ZBR CLI on your machine.
+              </p>
             </div>
 
             <div className="space-y-2">
