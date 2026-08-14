@@ -25,7 +25,7 @@ export default function Footer() {
             Website
           </Link>
           <Link
-            href="https://docs.zbrlang.tech/"
+            href="https://zbrlang.tech/docs/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-colors"
@@ -33,7 +33,7 @@ export default function Footer() {
             Docs
           </Link>
           <Link
-            href="https://docs.zbrlang.tech/guides/webapp-getting-started"
+            href="https://zbrlang.tech/docs/guides/webapp-getting-started"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-primary transition-colors"

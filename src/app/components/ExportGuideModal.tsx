@@ -57,7 +57,7 @@ export default function ExportGuideModal({
               </span>
               <p className="text-xs text-muted-foreground">
                 <a 
-                  href="https://docs.zbrlang.tech/docs/guides/installation" 
+                  href="https://zbrlang.tech/docs/guides/installation" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="text-primary underline hover:opacity-80"
